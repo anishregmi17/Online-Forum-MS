@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/home', [TemplateController::class, 'index']);
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -21,3 +18,13 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/home', [TemplateController::class, 'index']);
+
+Route::get('/admin', function () {
+    return view('admin.layouts.main');
+});
+
+Route::get('/admin/text', function () {
+    return view('admin.test');
+});

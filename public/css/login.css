@@ -1,0 +1,123 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Form container */
+.fp__signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.fp__signin_overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+/* Login area */
+.fp__login_area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.fp__login_area h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fp__login_area p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Form input styles */
+.fp__login_imput {
+    margin-bottom: 20px;
+}
+
+.fp__login_imput label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.fp__login_imput input[type="email"],
+.fp__login_imput input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Login button */
+.common_btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.common_btn:hover {
+    background-color: #0056b3;
+}
+
+/* Or separator */
+.or {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.or span {
+    background-color: #fff;
+    padding: 0 10px;
+}
+
+/* Social login icons */
+ul.d-flex {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.d-flex li {
+    margin-right: 10px;
+}
+
+ul.d-flex li a {
+    color: #000;
+    font-size: 20px;
+}
+
+/* Create account link */
+.create_account {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create_account a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.create_account a:hover {
+    text-decoration: underline;
+}

@@ -3,10 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -25,6 +28,9 @@ Route::get('/admin', function () {
     return view('admin.layouts.main');
 });
 
-Route::get('/admin/text', function () {
+Route::get('/admin/test', function () {
     return view('admin.test');
 });
+
+Route::resource('posts', PostController::class);
+

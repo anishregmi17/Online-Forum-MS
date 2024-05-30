@@ -16,7 +16,7 @@
             @csrf
             @method('PUT')
             <div class="form-group mb-3">
-                <label for="profileimage" class="form-label">Profile profileimage</label>
+                <label for="profileimage" class="form-label">Profile Image</label>
                 <input type="file" class="form-control" name="profileimage" id="profileimage">
                 @error('profileimage')
                 <small class="text-danger">{{ $message }}</small>
@@ -40,7 +40,7 @@
                 @enderror
             </div>
             <div class="form-group mb-3">
-                <label for="description" class="form-label">description</label>
+                <label for="description" class="form-label">Description</label>
                 <input type="text" class="form-control" name="description" id="description" value="{{ $post->description }}">
                 @error('description')
                 <small class="text-danger">{{ $message }}</small>@enderror

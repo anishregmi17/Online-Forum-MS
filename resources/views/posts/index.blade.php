@@ -34,7 +34,7 @@
                                 <a target="_blank" href="{{ asset('uploads/' . $post->profileimage) }}">
                                     <img width="50" height="50" src="{{ asset('uploads/' . $post->profileimage) }}" alt="">
                                 </a>
-                            </td>
+                            </td> 
                             <td>{{ $post->username }}</td>
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->description }}</td>

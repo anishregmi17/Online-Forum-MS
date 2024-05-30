@@ -17,13 +17,14 @@
                 <img src="{{ asset($post->profileimage) }}" alt="{{ $post->title }}" class="img-fluid">
                 <div class="card-header">{{ $post->title }}</div>
                 <div class="card-body">
-                    <p>{{ $post->url }}</p>
+                    <p>{{ $post->description }}</p>
                     <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

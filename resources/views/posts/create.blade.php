@@ -22,7 +22,7 @@
                 @enderror
             </div>
             <div class="form-group mb-3">
-                <label for="username" class="form-label">username</label>
+                <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" name="username" id="username" value="{{ old('username') }}">
                 @error('username')
                 <small class="text-danger">{{ $message }}</small>

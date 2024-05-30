@@ -31,32 +31,38 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'profileimage' => 'required|image|mimes:png,jpg,jpeg|max:2048',
+            'username' => 'required|string|min:2|max:100',
             'title' => 'required|string|min:2|max:100',
-            'url' => 'required|alpha_dash|min:2|max:100',
+            'description' => 'required|string|min:2|max:100',
             'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
-        $name = md5($request->image . time()) . '.' . $request->image->extension();
-        $request->file('image')->move(public_path('uploads'), $name);
+        $profileImageName = md5($request->profileimage->getClientOriginalName() . time()) . '.' . $request->profileimage->extension();
+        $request->profileimage->move(public_path('uploads'), $profileImageName);
+
+        $imageName = md5($request->image->getClientOriginalName() . time()) . '.' . $request->image->extension();
+        $request->image->move(public_path('uploads'), $imageName);
 
         $post = new Post;
+        $post->profileimage = 'uploads/' . $profileImageName;
+        $post->username = $request->username;
         $post->title = $request->title;
-        $post->url = $request->url;
-        $post->image = 'uploads/' . $name;
+        $post->description = $request->description;
+        $post->image = 'uploads/' . $imageName;
         $post->save();
 
         return redirect()->route('posts.index');
     }
 
-/**
- * Display the specified resource.
- */
-public function show(string $id)
-{
-    $post = Post::findOrFail($id);
-    return view('posts.show', compact('post'));
-}
-
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $post = Post::findOrFail($id);
+        return view('posts.show', compact('post'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -75,20 +81,30 @@ public function show(string $id)
         $post = Post::findOrFail($id);
 
         $request->validate([
+            'profileimage' => 'image|mimes:png,jpg,jpeg|max:2048',
+            'username' => 'required|string|min:2|max:100',
             'title' => 'required|string|min:2|max:100',
-            'url' => 'required|alpha_dash|min:2|max:100',
-            'image' => 'nullable|image|mimes:png,jpg,jpeg|max:2048'
+            'description' => 'required|string|min:2|max:100',
+            'image' => 'image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
         if ($request->hasFile('image')) {
             File::delete(public_path($post->image));
-            $name = md5($request->image . time()) . '.' . $request->image->extension();
-            $request->file('image')->move(public_path('uploads'), $name);
-            $post->image = 'uploads/' . $name;
+            $imageName = md5($request->image->getClientOriginalName() . time()) . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads'), $imageName);
+            $post->image = 'uploads/' . $imageName;
         }
 
+        if ($request->hasFile('profileimage')) {
+            File::delete(public_path($post->profileimage));
+            $profileImageName = md5($request->profileimage->getClientOriginalName() . time()) . '.' . $request->profileimage->extension();
+            $request->profileimage->move(public_path('uploads'), $profileImageName);
+            $post->profileimage = 'uploads/' . $profileImageName;
+        }
+
+        $post->username = $request->username;
         $post->title = $request->title;
-        $post->url = $request->url;
+        $post->description = $request->description;
         $post->save();
 
         return redirect()->route('posts.index');
@@ -101,6 +117,7 @@ public function show(string $id)
     {
         $post = Post::findOrFail($id);
         File::delete(public_path($post->image));
+        File::delete(public_path($post->profileimage));
         $post->delete();
         return redirect()->route('posts.index');
     }

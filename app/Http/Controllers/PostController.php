@@ -81,11 +81,11 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         $request->validate([
-            'profileimage' => 'image|mimes:png,jpg,jpeg|max:2048',
+            'profileimage' => 'image|mimes:png,jpg,jpeg|max:20000',
             'username' => 'required|string|min:2|max:100',
             'title' => 'required|string|min:2|max:100',
             'description' => 'required|string|min:2|max:100',
-            'image' => 'image|mimes:png,jpg,jpeg|max:2048'
+            'image' => 'image|mimes:png,jpg,jpeg|max:20000'
         ]);
 
         if ($request->hasFile('image')) {

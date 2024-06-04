@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Communities extends Model
+class popular extends Model
 {
     use HasFactory;
-    protected $fillable = ['icon','title'];
-
+    protected $fillable = ['profileimage', 'username','title','description' , 'image'];
 }

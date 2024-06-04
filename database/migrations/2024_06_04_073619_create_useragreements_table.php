@@ -11,20 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('communities', function (Blueprint $table) {
+        Schema::create('useragreements', function (Blueprint $table) {
             $table->id();
-            $table->string('icon', 150);
             $table->string('title', 150);
+            $table->text('description', 150);
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('communities');
+        Schema::dropIfExists('useragreements');
     }
 };
-

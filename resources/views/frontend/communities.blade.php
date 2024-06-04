@@ -11,7 +11,7 @@
                     <span class="font-weight-bold community-name p-2"
                       >r/tech <i class="fa-solid fa-computer"></i
                     ></span>
-                    <!-- <img src="profile_icons/tech_icon.png" alt="Tech Community Icon" class="community-icon"> -->
+                    <!-- <img src="profile_icons/tech_icon.png" alt="Tech Community Icon" class="community-icon">
                   </a>
                 </li>
                 <li>

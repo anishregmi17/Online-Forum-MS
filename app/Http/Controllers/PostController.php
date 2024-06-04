@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::query()->paginate(2);
+        $posts = Post::paginate(2);
         return view('posts.index', ['posts' => $posts]);
     }
 
@@ -38,21 +38,18 @@ class PostController extends Controller
             'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
-        $profileImageName = md5($request->profileimage->getClientOriginalName() . time()) . '.' . $request->profileimage->extension();
-        $request->profileimage->move(public_path('uploads'), $profileImageName);
+        $profileImageName = $this->uploadImage($request->file('profileimage'), 'uploads');
+        $imageName = $this->uploadImage($request->file('image'), 'uploads');
 
-        $imageName = md5($request->image->getClientOriginalName() . time()) . '.' . $request->image->extension();
-        $request->image->move(public_path('uploads'), $imageName);
+        Post::create([
+            'profileimage' => 'uploads/' . $profileImageName,
+            'username' => $request->username,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => 'uploads/' . $imageName,
+        ]);
 
-        $post = new Post;
-        $post->profileimage = 'uploads/' . $profileImageName;
-        $post->username = $request->username;
-        $post->title = $request->title;
-        $post->description = $request->description;
-        $post->image = 'uploads/' . $imageName;
-        $post->save();
-
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }
 
     /**
@@ -89,17 +86,13 @@ class PostController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            File::delete(public_path($post->image));
-            $imageName = md5($request->image->getClientOriginalName() . time()) . '.' . $request->image->extension();
-            $request->image->move(public_path('uploads'), $imageName);
-            $post->image = 'uploads/' . $imageName;
+            $this->deleteFile($post->image);
+            $post->image = 'uploads/' . $this->uploadImage($request->file('image'), 'uploads');
         }
 
         if ($request->hasFile('profileimage')) {
-            File::delete(public_path($post->profileimage));
-            $profileImageName = md5($request->profileimage->getClientOriginalName() . time()) . '.' . $request->profileimage->extension();
-            $request->profileimage->move(public_path('uploads'), $profileImageName);
-            $post->profileimage = 'uploads/' . $profileImageName;
+            $this->deleteFile($post->profileimage);
+            $post->profileimage = 'uploads/' . $this->uploadImage($request->file('profileimage'), 'uploads');
         }
 
         $post->username = $request->username;
@@ -107,7 +100,7 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->save();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
     }
 
     /**
@@ -116,9 +109,29 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         $post = Post::findOrFail($id);
-        File::delete(public_path($post->image));
-        File::delete(public_path($post->profileimage));
+        $this->deleteFile($post->image);
+        $this->deleteFile($post->profileimage);
         $post->delete();
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
+    }
+
+    /**
+     * Upload an image.
+     */
+    private function uploadImage($image, $path)
+    {
+        $imageName = md5($image->getClientOriginalName() . time()) . '.' . $image->extension();
+        $image->move(public_path($path), $imageName);
+        return $imageName;
+    }
+
+    /**
+     * Delete a file from storage.
+     */
+    private function deleteFile($filePath)
+    {
+        if (File::exists(public_path($filePath))) {
+            File::delete(public_path($filePath));
+        }
     }
 }

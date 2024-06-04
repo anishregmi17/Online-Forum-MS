@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('catagories', function (Blueprint $table) {
             $table->id();
-            $table->string('profileimage', 150);
-            $table->string('username', 150);
-            $table->string('title', 150);
-            $table->string('description', 150);
-            $table->string('image', 150);
             $table->timestamps();
         });
     }
@@ -27,7 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('catagories');
     }
 };
-

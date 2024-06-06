@@ -12,7 +12,7 @@ class CommunitiesController extends Controller
      */
     public function index()
     {
-        //
+        return"hello";
     }
 
     /**

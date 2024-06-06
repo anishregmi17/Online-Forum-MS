@@ -23,9 +23,9 @@
             </div>
 
             <div class="form-group mb-3">
-                <label for="image" class="form-label">Icon</label>
-                <input type="file" class="form-control" name="image" id="image">
-                @error('image')
+                <label for="icon" class="form-label">Icon</label>
+                <input type="file" class="form-control" name="icon" id="icon">
+                @error('icon')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>

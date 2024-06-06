@@ -19,39 +19,36 @@
                     <thead>
                         <tr>
                             <th scope="col">SN</th>
-                            <th scope="col">Profile Image</th>
                             <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Image</th>
+                            <th scope="col">Icon</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $post )
+                        @foreach ($communities as $communities )
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>
-                                <a target="_blank" href="{{ asset('uploads/' . $post->profileimage) }}">
-                                    <img width="50" height="50" src="{{ asset('uploads/' . $post->profileimage) }}" alt="">
+                                <a target="_blank" href="{{ asset('uploads/' . $communities->profileimage) }}">
+                                    <img width="50" height="50" src="{{ asset('uploads/' . $communities->profileimage) }}" alt="">
                                 </a>
-                            </td> 
-                            <td>{{ $post->username }}</td>
-                            <td>{{ $post->title }}</td>
-                            <td>{{ $post->description }}</td>
+                            </td>
+                            <td>{{ $communities->title }}</td>
+                            <td>{{ $communities->description }}</td>
                             <td>
-                                <a target="_blank" href="{{ asset('uploads/' . $post->image) }}">
-                                    <img width="50" height="50" src="{{ asset('uploads/' . $post->image) }}" alt="">
+                                <a target="_blank" href="{{ asset('uploads/' . $communities->image) }}">
+                                    <img width="50" height="50" src="{{ asset('uploads/' . $communities->image) }}" alt="">
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ route('posts.show',['post'=> $post->id]) }}"
+                                <a href="{{ route('communities.show',['communities'=> $communities->id]) }}"
                                     class="btn btn-sm btn-info">Show</a>
-                                <a href="{{ route('posts.edit',['post'=> $post->id]) }}"
+                                <a href="{{ route('communities.edit',['communities'=> $communities->id]) }}"
                                      class="btn btn-sm btn-primary">Edit</a>
 
                             <form onsubmit="return confirm('Are you sure?')"
-                             action="{{ route('posts.destroy',['post'=>$post->id]) }}"
-                             method="POST" class="d-inline">
+                             action="{{ route('communities.destroy',['communities'=>$communities->id]) }}"
+                             method="communities" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
@@ -63,7 +60,7 @@
                    </table>
                 </div>
                 <div class="my-3">
-                    {{ $posts->links() }}
+                    {{ $communities->links() }}
                 </div>
             </div>
         </div>

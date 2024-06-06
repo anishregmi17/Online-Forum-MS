@@ -12,26 +12,9 @@
 <body>
 <div class="card m-5 p-5">
     <div class="card-body m-5 p-5 ">
-        <form action="{{ route('posts.update', ['post' => $post->id]) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('communities.update', ['post' => $post->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="form-group mb-3">
-                <label for="profileimage" class="form-label">Profile Image</label>
-                <input type="file" class="form-control" name="profileimage" id="profileimage">
-                @error('profileimage')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-                <a target="_blank" href="{{ asset('uploads/' . $post->profileimage) }}">
-                    <img width="50" height="50" src="{{ asset('uploads/' . $post->profileimage) }}" alt="">
-                </a>
-            </div>
-            <div class="form-group mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username" id="username" value="{{ $post->username }}">
-                @error('username')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
             <div class="form-group mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" name="title" id="title" value="{{ $post->title }}">
@@ -39,20 +22,15 @@
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
+
             <div class="form-group mb-3">
-                <label for="description" class="form-label">Description</label>
-                <input type="text" class="form-control" name="description" id="description" value="{{ $post->description }}">
-                @error('description')
-                <small class="text-danger">{{ $message }}</small>@enderror
-            </div>
-            <div class="form-group mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input type="file" class="form-control" name="image" id="image">
-                @error('image')
+                <label for="icon" class="form-label">icon</label>
+                <input type="file" class="form-control" name="icon" id="icon">
+                @error('icon')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
-                <a target="_blank" href="{{ asset('uploads/' . $post->image) }}">
-                    <img width="50" height="50" src="{{ asset('uploads/' . $post->image) }}" alt="">
+                <a target="_blank" href="{{ asset('uploads/' . $post->icon) }}">
+                    <img width="50" height="50" src="{{ asset('uploads/' . $post->icon) }}" alt="">
                 </a>
             </div>
             <button type="submit" class="btn btn-primary">Save Post</button>

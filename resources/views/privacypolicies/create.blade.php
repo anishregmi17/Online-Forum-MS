@@ -15,20 +15,6 @@
         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group mb-3">
-                <label for="profileimage" class="form-label">Profile Image</label>
-                <input type="file" class="form-control" name="profileimage" id="profileimage">
-                @error('profileimage')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
-            <div class="form-group mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username" id="username" value="{{ old('username') }}">
-                @error('username')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
-            <div class="form-group mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
                 @error('title')
@@ -42,13 +28,7 @@
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
-            <div class="form-group mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input type="file" class="form-control" name="image" id="image">
-                @error('image')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
+
             <button type="submit" class="btn btn-primary">Save Post</button>
         </form>
     </div>

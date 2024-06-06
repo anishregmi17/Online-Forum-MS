@@ -28,7 +28,6 @@
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
-
             <button type="submit" class="btn btn-primary">Save Post</button>
         </form>
     </div>

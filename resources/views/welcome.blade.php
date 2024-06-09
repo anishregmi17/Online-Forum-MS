@@ -82,6 +82,21 @@
         .footer a:hover {
             text-decoration: underline;
         }
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px; /* Padding inside the button */
+            margin: 5px; /* Margin around the button */
+            border: 2px solid #000; /* Border around the button */
+            text-decoration: none; /* Remove underline from links */
+            color: #000; /* Text color */
+            background-color: #302323; /* Background color */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .button-link:hover {
+            background-color: #d95f5f; /* Background color on hover */
+        }
     </style>
 </head>
 <body>
@@ -90,8 +105,8 @@
             <h1>Online Forum</h1>
         </div>
         <div>
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <a href="{{ route('login') }}" class="button-link">Login</a>
+            <a href="{{ route('register') }}" class="button-link">Register</a>
         </div>
     </header>
     <main class="main">
@@ -113,7 +128,7 @@
         </div>
     </main>
     <footer class="footer">
-        <p>&copy; 2024 Online Forum. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>&copy; 2024 Pokhara Online Forum. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </body>
 </html>

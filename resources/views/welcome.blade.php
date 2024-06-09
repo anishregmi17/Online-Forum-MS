@@ -3,198 +3,117 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Online Forum</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <style>
-        /* Tailwind CSS */
-        *, ::after, ::before {
-            box-sizing: border-box;
-            border-width: 0;
-            border-style: solid;
-            border-color: #e5e7eb;
-        }
-        ::after, ::before {
-            --tw-content: '';
-        }
-        html {
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%;
-            -moz-tab-size: 4;
-            tab-size: 4;
-            font-family: Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            -webkit-tap-highlight-color: transparent;
-        }
         body {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            line-height: inherit;
+            background-color: #f9f9f9;
+            color: #333;
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-size: inherit;
-            font-weight: inherit;
-        }
-        a {
-            color: inherit;
-            text-decoration: inherit;
-        }
-        button, input, optgroup, select, textarea {
-            font-family: inherit;
-            font-feature-settings: inherit;
-            font-variation-settings: inherit;
-            font-size: 100%;
-            font-weight: inherit;
-            line-height: inherit;
-            color: inherit;
-            margin: 0;
-            padding: 0;
-        }
-        button, select {
-            text-transform: none;
-        }
-        button {
-            background-color: transparent;
-            background-image: none;
-        }
-        :-moz-focusring {
-            outline: auto;
-        }
-        :-moz-ui-invalid {
-            box-shadow: none;
-        }
-        table {
-            text-indent: 0;
-            border-color: inherit;
-            border-collapse: collapse;
-        }
-        textarea {
-            resize: vertical;
-        }
-        .absolute {
-            position: absolute;
-        }
-        .relative {
-            position: relative;
-        }
-        .flex {
+        .header {
+            background-color: #ff2d20;
+            color: white;
+            padding: 10px 20px;
             display: flex;
-        }
-        .grid {
-            display: grid;
-        }
-        .hidden {
-            display: none;
-        }
-        .min-h-screen {
-            min-height: 100vh;
-        }
-        .w-full {
-            width: 100%;
-        }
-        .max-w-7xl {
-            max-width: 80rem;
-        }
-        .flex-col {
-            flex-direction: column;
-        }
-        .items-center {
+            justify-content: space-between;
             align-items: center;
         }
-        .justify-between {
-            justify-content: space-between;
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
         }
-        .gap-4 {
-            gap: 1rem;
+        .header a:hover {
+            text-decoration: underline;
         }
-        .p-6 {
-            padding: 1.5rem;
-        }
-        .text-center {
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
             text-align: center;
         }
-        .font-semibold {
-            font-weight: 600;
+        .main h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
-        .text-xl {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
         }
-        .text-sm {
-            font-size: 0.875rem;
-            line-height: 1.25rem;
+        .feature {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: left;
         }
-        .text-gray-500 {
-            --tw-text-opacity: 1;
-            color: rgb(107 114 128 / var(--tw-text-opacity));
+        .feature h3 {
+            margin-top: 0;
+            color: #ff2d20;
         }
-        .text-white {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity));
+        .feature p {
+            font-size: 1rem;
+            line-height: 1.6;
         }
-        .bg-gray-50 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
-        .bg-gray-800 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+        .footer a {
+            color: #ff2d20;
+            text-decoration: none;
         }
-        .bg-black {
-            --tw-bg-opacity: 1;
-            background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-        }
-        .rounded-md {
-            border-radius: 0.375rem;
-        }
-        .py-2 {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        .shadow-md {
-            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
-            box-shadow: var(--tw-shadow);
-        }
-        .hover\:bg-gray-700:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-        }
-        @media (min-width: 768px) {
-            .lg\:flex-row {
-                flex-direction: row;
-            }
-            .lg\:gap-8 {
-                gap: 2rem;
-            }
-            .lg\:p-10 {
-                padding: 2.5rem;
-            }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-black text-gray-500 dark:text-white">
-    <header class="w-full bg-gray-800 text-white py-4 px-6 shadow-md">
-        <div class="flex justify-between items-center">
-            <div class="text-xl font-semibold">
-                Online Forum
-            </div>
-            <div class="flex gap-4">
-                <a href="{{ route('login') }}" class="py-2 px-4 rounded-md hover:bg-gray-700">Login</a>
-                <a href="{{ route('register') }}" class="py-2 px-4 rounded-md hover:bg-gray-700">Register</a>
-            </div>
+<body>
+    <header class="header">
+        <div>
+            <h1>Online Forum</h1>
+        </div>
+        <div>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
         </div>
     </header>
-    <main class="relative min-h-screen flex items-center justify-center">
-        <div class="relative w-full max-w-7xl px-6 lg:px-10 py-16 text-center">
-            <h1 class="text-4xl font-semibold mb-4">Welcome to the Online Forum</h1>
-            <p class="text-lg">Connect with like-minded individuals and engage in meaningful discussions. Our community is here to support you and provide a platform for sharing ideas, asking questions, and finding answers.</p>
+    <main class="main">
+        <h1>Welcome to Our Community!</h1>
+        <p>Join our online forum to connect with like-minded individuals, share your thoughts, and explore new ideas. Our community is designed to foster healthy discussions and provide a platform for you to express yourself.</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Engage in Discussions</h3>
+                <p>Participate in a wide range of discussions on various topics. Whether you're passionate about technology, arts, or social issues, there's something for everyone.</p>
+            </div>
+            <div class="feature">
+                <h3>Share Your Knowledge</h3>
+                <p>Contribute to the community by sharing your expertise and insights. Help others learn and grow by providing valuable information and resources.</p>
+            </div>
+            <div class="feature">
+                <h3>Connect with Others</h3>
+                <p>Build connections with people who share your interests. Make new friends, network with professionals, and become a part of our vibrant community.</p>
+            </div>
         </div>
     </main>
+    <footer class="footer">
+        <p>&copy; 2024 Online Forum. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
 </body>
 </html>

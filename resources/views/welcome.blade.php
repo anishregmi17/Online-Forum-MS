@@ -16,11 +16,11 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #ffffff;
-            color: #060404;
+            background-color: #f9f9f9;
+            color: #333;
         }
         .header {
-            background-color: #e8675e;
+            background-color: #ff2d20;
             color: white;
             padding: 10px 20px;
             display: flex;
@@ -108,8 +108,14 @@
         }
 
         .button-link.register:hover {
-            background-color: #c23321; /* Darker red on hover */
+            background-color: #d8513f; /* Darker red on hover */
             transform: scale(1.05); /* Slightly enlarge on hover */
+            text-decoration: none; /* Ensure no underline */
+        }
+        .button-link.login:hover {
+            background-color: #7a46db; /* Darker red on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            text-decoration: none; /* Ensure no underline */
         }
     </style>
 </head>
@@ -119,7 +125,7 @@
             <img src="{{ asset('images/image2.png') }}" alt="Online Forum Logo">
         </div>
         <div class="in">
-            <a href="{{ route('login') }}" class="button-link">Login</a>
+            <a href="{{ route('login') }}" class="button-link login">Login</a>
             <a href="{{ route('register') }}" class="button-link register">Register</a>
         </div>
     </header>

@@ -16,16 +16,19 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #ffffff;
+            color: #060404;
         }
         .header {
-            background-color: #ff2d20;
+            background-color: #e8675e;
             color: white;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        .header img {
+            height: 50px; /* Adjust the logo height as needed */
         }
         .header a {
             color: white;
@@ -74,6 +77,7 @@
             color: white;
             padding: 20px;
             text-align: center;
+            margin-top: 2rem;
         }
         .footer a {
             color: #ff2d20;
@@ -86,27 +90,37 @@
             display: inline-block;
             padding: 10px 20px; /* Padding inside the button */
             margin: 5px; /* Margin around the button */
-            border: 2px solid #000; /* Border around the button */
+            border: none; /* Remove border */
             text-decoration: none; /* Remove underline from links */
-            color: #000; /* Text color */
-            background-color: #302323; /* Background color */
+            color: white; /* Text color */
+            background-color: #3b5998; /* Facebook-like blue color */
             border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s; /* Smooth transition for hover effect */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
         }
 
         .button-link:hover {
-            background-color: #d95f5f; /* Background color on hover */
+            background-color: #365899; /* Darker blue on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            text-decoration: none; /* Ensure no underline */
+        }
+        .button-link.register {
+            background-color: #dd4b39; /* Google-like red color */
+        }
+
+        .button-link.register:hover {
+            background-color: #c23321; /* Darker red on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div>
-            <h1>Online Forum</h1>
+            <img src="{{ asset('images/image2.png') }}" alt="Online Forum Logo">
         </div>
-        <div>
+        <div class="in">
             <a href="{{ route('login') }}" class="button-link">Login</a>
-            <a href="{{ route('register') }}" class="button-link">Register</a>
+            <a href="{{ route('register') }}" class="button-link register">Register</a>
         </div>
     </header>
     <main class="main">

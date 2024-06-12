@@ -131,7 +131,7 @@
     </header>
     <main class="main">
         <h1>Welcome to Our Community!</h1>
-        <p>Join our online forum to connect with like-minded individuals, share your thoughts, and explore new ideas. Our community is designed to foster healthy discussions and provide a platform for you to express yourself.</p>
+        <p>Join our online forum to connect with like-minded individuals, share yours thoughts, and explore new ideas. Our community is designed to foster healthy discussions and provide a platform for you to express yourself.</p>
         <div class="features">
             <div class="feature">
                 <h3>Engage in Discussions</h3>

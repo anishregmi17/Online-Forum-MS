@@ -149,8 +149,23 @@
                       }
                     }
                   </script>
-                  <li><a class="dropdown-item" href="login.php">Logout</a></li>
-                </ul>
+<li>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+    <a class="dropdown-item" href="#" onclick="event.preventDefault(); confirmLogout();">
+        Logout
+    </a>
+</li>
+
+<script>
+    function confirmLogout() {
+        if (confirm('Are you sure you want to logout?')) {
+            document.getElementById('logout-form').submit();
+        }
+    }
+</script>
+              </ul>
               </li>
             </ul>
           </div>

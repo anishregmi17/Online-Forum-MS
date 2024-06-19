@@ -23,7 +23,7 @@
         }
         .login-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
             padding: 20px;
             box-sizing: border-box;
         }

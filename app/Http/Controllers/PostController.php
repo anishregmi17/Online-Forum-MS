@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate(2);
-        return view('posts.index', ['posts' => $posts]);
+        return view('admin.posts.index', ['posts' => $posts]);
     }
 
     /**
@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('admin.posts.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class PostController extends Controller
             'image' => 'uploads/' . $imageName,
         ]);
 
-        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
+        return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
     }
 
     /**
@@ -58,7 +58,7 @@ class PostController extends Controller
     public function show(string $id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.show', compact('post'));
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -67,7 +67,7 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -100,7 +100,7 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->save();
 
-        return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
+        return redirect()->route('admin.posts.index')->with('success', 'Post updated successfully.');
     }
 
     /**
@@ -112,7 +112,7 @@ class PostController extends Controller
         $this->deleteFile($post->image);
         $this->deleteFile($post->profileimage);
         $post->delete();
-        return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
+        return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
     }
 
     /**

@@ -20,7 +20,7 @@
             color: #333;
         }
         .header {
-            background-color: #c49a98;
+            background-color: #e9d6d5;
             color: white;
             padding: 10px 20px;
             display: flex;

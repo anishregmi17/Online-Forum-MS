@@ -17,12 +17,12 @@
         </a>
         <ul id="hero" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{route('posts.create')}}">
+            <a href="{{route('admin.posts.create')}}">
               <i class="bi bi-circle"></i><span>Add Post</span>
             </a>
           </li>
           <li>
-            <a href="{{route('posts.index')}}" class="active">
+            <a href="{{route('admin.posts.index')}}" class="active">
               <i class="bi bi-circle"></i><span>Manage Post</span>
             </a>
           </li>

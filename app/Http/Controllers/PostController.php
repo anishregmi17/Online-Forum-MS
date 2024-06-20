@@ -49,7 +49,7 @@ class PostController extends Controller
             'image' => 'uploads/' . $imageName,
         ]);
 
-        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
+        return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
     }
 
     /**
@@ -112,7 +112,7 @@ class PostController extends Controller
         $this->deleteFile($post->image);
         $this->deleteFile($post->profileimage);
         $post->delete();
-        return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
+        return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
     }
 
     /**

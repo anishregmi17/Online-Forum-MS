@@ -16,12 +16,12 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #f9f9f9;
+            background-color: #e6d2d2;
             color: #333;
         }
         .header {
-            background-color: #e9d6d5;
-            color: white;
+            background-color: #ffffff;
+            color: hsl(0, 0%, 100%);
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;

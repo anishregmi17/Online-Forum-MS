@@ -10,16 +10,16 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
-// Home route
-Route::get('/home', [TemplateController::class, 'index'])->name('home');
-
 // Welcome route
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Dashboard route
-Route::middleware(['auth', 'verified'])->group(function () {
+// Home route protected by authentication middleware
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [TemplateController::class, 'index'])->name('home');
+
+    // Dashboard route
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -30,7 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Admin Panel routes
+// Admin Panel routes protected by authentication middleware
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return view('admin.layouts.main');
@@ -50,5 +50,3 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
 // Authentication routes
 require __DIR__.'/auth.php';
-
-

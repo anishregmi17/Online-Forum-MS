@@ -35,7 +35,7 @@ Route::get('/home', [TemplateController::class, 'index']);
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return view('admin.layouts.main');
-    })->name('dashboard');
+    })->name('index');
 
 });
 

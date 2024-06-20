@@ -1,124 +1,245 @@
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+          {{-- <i class="bi bi-grid"></i> --}}
+          <span>Online Forum Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#hero" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Posts</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="hero" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{route('posts.create')}}">
+              <i class="bi bi-circle"></i><span>Add Post</span>
             </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-
-             <!-- Divider -->
-             <hr class="sidebar-divider">
-
-             <!-- Heading -->
-             <div class="sidebar-heading">
-                 Interface
-             </div>
-
-             <!-- Nav Item - Pages Collapse Menu -->
-             <li class="nav-item">
-                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                     aria-expanded="true" aria-controls="collapseTwo">
-                     <i class="fas fa-fw fa-cog"></i>
-                     <span>POSTS</span>
-                 </a>
-                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                     <div class="bg-white py-2 collapse-inner rounded">
-                         <h6 class="collapse-header">Custom Components:</h6>
-                         <a class="collapse-item" href="buttons.html">Buttons</a>
-                         <a class="collapse-item" href="cards.html">Cards</a>
-                     </div>
-                 </div>
-             </li>
-
-             <!-- Nav Item - Utilities Collapse Menu -->
-             <li class="nav-item">
-                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                     aria-expanded="true" aria-controls="collapseUtilities">
-                     <i class="fas fa-fw fa-wrench"></i>
-                     <span>Utilities</span>
-                 </a>
-                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                     data-parent="#accordionSidebar">
-                     <div class="bg-white py-2 collapse-inner rounded">
-                         <h6 class="collapse-header">Custom Utilities:</h6>
-                         <a class="collapse-item" href="utilities-color.html">Colors</a>
-                         <a class="collapse-item" href="utilities-border.html">Borders</a>
-                         <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                         <a class="collapse-item" href="utilities-other.html">Other</a>
-                     </div>
-                 </div>
-             </li>
-
-             <!-- Divider -->
-             <hr class="sidebar-divider">
-
-             <!-- Heading -->
-             <div class="sidebar-heading">
-                 Addons
-             </div>
-
-             <!-- Nav Item - Pages Collapse Menu -->
-             <li class="nav-item">
-                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                     aria-expanded="true" aria-controls="collapsePages">
-                     <i class="fas fa-fw fa-folder"></i>
-                     <span>Pages</span>
-                 </a>
-                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                     <div class="bg-white py-2 collapse-inner rounded">
-                         <h6 class="collapse-header">Login Screens:</h6>
-                         <a class="collapse-item" href="login.html">Login</a>
-                         <a class="collapse-item" href="register.html">Register</a>
-                         <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                         <div class="collapse-divider"></div>
-                         <h6 class="collapse-header">Other Pages:</h6>
-                         <a class="collapse-item" href="404.html">404 Page</a>
-                         <a class="collapse-item" href="blank.html">Blank Page</a>
-                     </div>
-                 </div>
-             </li>
-
-             <!-- Nav Item - Charts -->
-             <li class="nav-item">
-                 <a class="nav-link" href="charts.html">
-                     <i class="fas fa-fw fa-chart-area"></i>
-                     <span>Charts</span></a>
-             </li>
-
-             <!-- Nav Item - Tables -->
-             <li class="nav-item">
-                 <a class="nav-link" href="tables.html">
-                     <i class="fas fa-fw fa-table"></i>
-                     <span>Tables</span></a>
-             </li>
-
-             <!-- Divider -->
-             <hr class="sidebar-divider d-none d-md-block">
-
-             <!-- Sidebar Toggler (Sidebar) -->
-             <div class="text-center d-none d-md-inline">
-                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-             </div>
-
-             <!-- Sidebar Message -->
-             <div class="sidebar-card d-none d-lg-flex">
-                 <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-             </div>
+          </li>
+          <li>
+            <a href="{{route('posts.index')}}" class="active">
+              <i class="bi bi-circle"></i><span>Manage Post</span>
+            </a>
+          </li>
         </ul>
-        <!-- End of Sidebar -->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#services" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="services" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../services/create.php">
+              <i class="bi bi-circle"></i><span>Add Category</span>
+            </a>
+          </li>
+          <li>
+            <a href="../services/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Category</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+
+     <li class="nav-item">
+        <a class="nav-link " data-bs-target="#features" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Communities</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="features" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../features/create.php">
+              <i class="bi bi-circle"></i><span>Add Communities</span>
+            </a>
+          </li>
+          <li>
+            <a href="../features/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Communities</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#testimonials" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Home</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="testimonials" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../testimonials/create.php">
+              <i class="bi bi-circle"></i><span>Add Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="../testimonials/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Home</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#price" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Popular</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="price" class="nav-content collapse" data-bs-parent="">
+          <li>
+            <a href="../price/create.php">
+              <i class="bi bi-circle"></i><span>Add Popular</span>
+            </a>
+          </li>
+          <li>
+            <a href="../price/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Popular</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Profile</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../users/create.php">
+              <i class="bi bi-circle"></i><span>Add Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="../users/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Profile</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+
+
+     <li class="nav-item">
+        <a class="nav-link " data-bs-target="#free_plan_feature" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>About Forum</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="free_plan_feature" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../free_plan_feature/create.php">
+              <i class="bi bi-circle"></i><span>Add About Forum</span>
+            </a>
+          </li>
+          <li>
+            <a href="../free_plan_feature/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage About Forum</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#business_plan_feature" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Content Policy</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="business_plan_feature" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../business_plan_feature/create.php">
+              <i class="bi bi-circle"></i><span>Add Content Policy</span>
+            </a>
+          </li>
+          <li>
+            <a href="../business_plan_feature/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Content Policy</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#developer_plan_feature" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Privacy Policy</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="developer_plan_feature" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../developer_plan_feature/create.php">
+              <i class="bi bi-circle"></i><span>Add Privacy Policy</span>
+            </a>
+          </li>
+          <li>
+            <a href="../developer_plan_feature/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Privacy Policy</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#faqs" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>User Agreement</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="faqs" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../faqs/create.php">
+              <i class="bi bi-circle"></i><span>Add User Agreement</span>
+            </a>
+          </li>
+          <li>
+            <a href="../faqs/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage User Agreement</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#settings" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>settings</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="settings" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../settings/create.php">
+              <i class="bi bi-circle"></i><span>Add settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="../settings/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage settings</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#filemanagers" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Footer</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="filemanagers" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../filemanagers/create.php">
+              <i class="bi bi-circle"></i><span>Add Footer</span>
+            </a>
+          </li>
+          <li>
+            <a href="../filemanagers/index.php" class="active">
+              <i class="bi bi-circle"></i><span>Manage Footer</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="../documentation/document.php">
+          Documentation
+        </a>
+
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->

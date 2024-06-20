@@ -20,7 +20,7 @@
             color: #333;
         }
         .header {
-            background-color: #ff2d20;
+            background-color: #c49a98;
             color: white;
             padding: 10px 20px;
             display: flex;
@@ -152,3 +152,4 @@
     </footer>
 </body>
 </html>
+

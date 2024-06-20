@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(2);
+        $posts = Post::paginate(10);
         return view('admin.posts.index', ['posts' => $posts]);
     }
 
@@ -49,7 +49,7 @@ class PostController extends Controller
             'image' => 'uploads/' . $imageName,
         ]);
 
-        return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
+        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }
 
     /**
@@ -112,7 +112,7 @@ class PostController extends Controller
         $this->deleteFile($post->image);
         $this->deleteFile($post->profileimage);
         $post->delete();
-        return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
     }
 
     /**

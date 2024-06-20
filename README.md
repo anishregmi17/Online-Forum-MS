@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-=======
+
+
 An online forum, also known as a message board or discussion board, is a virtual platform where users can engage in discussions, share information, ask questions, and interact with each others
 
 
@@ -24,5 +24,7 @@ A home page serves as the main entry point for a website, providing visitors wit
 
 5.Admin-Management Page(CRUD Part going on....): <br>
 The admin management section of a website or application is a secure area where administrators can oversee and control various aspects of the platform. This typically includes user management, content moderation, and system settings. Admins can add, edit, or remove users, assign roles and permissions, and manage content such as posts, comments, and media.  The admin management area is designed to be robust and user-friendly, ensuring that administrators can efficiently maintain and enhance the platform's functionality and security.
-![Screenshot 2024-06-19 171708](https://github.com/anishregmi17/Online-Forum-MS/assets/103883548/ffc79205-bd38-4065-9715-21c959b0b9bb)
->>>>>>> a00e8f968883febd4bae814af1c4679c889f6ff1
+![image](https://github.com/anishregmi17/Online-Forum-MS/assets/103883548/2b127803-bd9f-4603-af19-13a761d2e1dc)
+
+![image](https://github.com/anishregmi17/Online-Forum-MS/assets/103883548/5f93846f-308f-46b7-82b4-2b56d2359849)
+

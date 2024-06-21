@@ -9,6 +9,7 @@ use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ContentPolicyController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\UserAgreementController;
 
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
@@ -65,6 +66,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('contentpolicy', ContentPolicyController::class);
+});
+
+// route for user agreement
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('useragreements', UserAgreementController::class);
 });
 
 

@@ -179,23 +179,23 @@
         </ul>
       </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link " data-bs-target="#faqs" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>User Agreement</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="faqs" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../faqs/create.php">
+            <a href="{{route('admin.useragreements.create')}}">
               <i class="bi bi-circle"></i><span>Add User Agreement</span>
             </a>
           </li>
           <li>
-            <a href="../faqs/index.php" class="active">
+            <a href="{{route('admin.useragreements.index')}}" class="active">
               <i class="bi bi-circle"></i><span>Manage User Agreement</span>
             </a>
           </li>
         </ul>
-      </li>
+      </li> --}}
 
       <li class="nav-item">
         <a class="nav-link " data-bs-target="#settings" data-bs-toggle="collapse" href="#">

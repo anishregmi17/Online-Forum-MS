@@ -16,6 +16,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
+                        <th>Content</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -24,6 +25,7 @@
                         <tr>
                             <td>{{ $privacypolicy->id }}</td>
                             <td>{{ $privacypolicy->title }}</td>
+                            <td>{{ Str::limit($privacypolicy->content, 50) }}</td>
                             <td>
                                 <a href="{{ route('admin.privacypolicy.show', $privacypolicy->id) }}" class="btn btn-info">View</a>
                                 <a href="{{ route('admin.privacypolicy.edit', $privacypolicy->id) }}" class="btn btn-warning">Edit</a>

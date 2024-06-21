@@ -149,12 +149,12 @@
         </a>
         <ul id="business_plan_feature" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../business_plan_feature/create.php">
+            <a href="{{route('admin.contentpolicy.create')}}">
               <i class="bi bi-circle"></i><span>Add Content Policy</span>
             </a>
           </li>
           <li>
-            <a href="../business_plan_feature/index.php" class="active">
+            <a href="{{route('admin.contentpolicy.index')}}" class="active">
               <i class="bi bi-circle"></i><span>Manage Content Policy</span>
             </a>
           </li>

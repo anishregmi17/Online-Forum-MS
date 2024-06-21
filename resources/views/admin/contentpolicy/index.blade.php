@@ -16,6 +16,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
+                        <th>Content</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -24,6 +25,7 @@
                         <tr>
                             <td>{{ $contentPolicy->id }}</td>
                             <td>{{ $contentPolicy->title }}</td>
+                            <td>{{ Str::limit($contentPolicy->content, 50) }}</td>
                             <td>
                                 <a href="{{ route('admin.contentpolicy.show', $contentPolicy->id) }}" class="btn btn-info">View</a>
                                 <a href="{{ route('admin.contentpolicy.edit', $contentPolicy->id) }}" class="btn btn-warning">Edit</a>

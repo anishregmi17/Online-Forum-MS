@@ -4,6 +4,7 @@ use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommunitiesController;
+use App\Http\Controllers\AboutForumController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -46,6 +47,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     // Categories resource routes
     Route::resource('communities', CommunitiesController::class);
+});
+
+// route for about forum
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('aboutforum', AboutForumController::class);
 });
 
 // Authentication routes

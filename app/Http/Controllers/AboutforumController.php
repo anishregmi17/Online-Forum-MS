@@ -1,65 +1,61 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\aboutforum;
+use App\Models\AboutForum;
 use Illuminate\Http\Request;
 
-class AboutforumController extends Controller
+class AboutForumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $aboutforums = AboutForum::paginate(10);
+        return view('admin.aboutforum.index', compact('aboutforums'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.aboutforum.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'text' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        AboutForum::create($request->all());
+        return redirect()->route('admin.aboutforum.index')->with('success', 'About Forum created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(aboutforum $aboutforum)
+    public function show($id)
     {
-        //
+        $aboutforum = AboutForum::findOrFail($id);
+        return view('admin.aboutforum.show', compact('aboutforum'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(aboutforum $aboutforum)
+    public function edit($id)
     {
-        //
+        $aboutforum = AboutForum::findOrFail($id);
+        return view('admin.aboutforum.edit', compact('aboutforum'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, aboutforum $aboutforum)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'text' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        $aboutforum = AboutForum::findOrFail($id);
+        $aboutforum->update($request->all());
+        return redirect()->route('admin.aboutforum.index')->with('success', 'About Forum updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(aboutforum $aboutforum)
+    public function destroy($id)
     {
-        //
+        $aboutforum = AboutForum::findOrFail($id);
+        $aboutforum->delete();
+        return redirect()->route('admin.aboutforum.index')->with('success', 'About Forum deleted successfully.');
     }
 }

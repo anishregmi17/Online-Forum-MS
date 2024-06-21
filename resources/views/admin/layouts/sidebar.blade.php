@@ -167,12 +167,12 @@
         </a>
         <ul id="developer_plan_feature" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../developer_plan_feature/create.php">
+            <a href="{{route('admin.privacypolicy.create')}}">
               <i class="bi bi-circle"></i><span>Add Privacy Policy</span>
             </a>
           </li>
           <li>
-            <a href="../developer_plan_feature/index.php" class="active">
+            <a href="{{route('admin.privacypolicy.index')}}" class="active">
               <i class="bi bi-circle"></i><span>Manage Privacy Policy</span>
             </a>
           </li>

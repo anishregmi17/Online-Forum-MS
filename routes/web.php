@@ -7,6 +7,7 @@ use App\Http\Controllers\CommunitiesController;
 use App\Http\Controllers\AboutForumController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\ContentPolicyController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 // Logout route
@@ -59,6 +60,13 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('privacypolicy', PrivacyPolicyController::class);
 });
+
+// route for content policy
+
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('contentpolicy', ContentPolicyController::class);
+});
+
 
 // Authentication routes
 require __DIR__.'/auth.php';

@@ -2,64 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\privacypolicy;
+use App\Models\PrivacyPolicy;
 use Illuminate\Http\Request;
 
-class PrivacypolicyController extends Controller
+class PrivacyPolicyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $privacypolicies = PrivacyPolicy::paginate(10);
+        return view('admin.privacypolicy.index', compact('privacypolicies'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.privacypolicy.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        PrivacyPolicy::create($request->all());
+        return redirect()->route('admin.privacypolicy.index')->with('success', 'Privacy Policy created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(privacypolicy $privacypolicy)
+    public function show($id)
     {
-        //
+        $privacypolicy = PrivacyPolicy::findOrFail($id);
+        return view('admin.privacypolicy.show', compact('privacypolicy'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(privacypolicy $privacypolicy)
+    public function edit($id)
     {
-        //
+        $privacypolicy = PrivacyPolicy::findOrFail($id);
+        return view('admin.privacypolicy.edit', compact('privacypolicy'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, privacypolicy $privacypolicy)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        $privacypolicy = PrivacyPolicy::findOrFail($id);
+        $privacypolicy->update($request->all());
+        return redirect()->route('admin.privacypolicy.index')->with('success', 'Privacy Policy updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(privacypolicy $privacypolicy)
+    public function destroy($id)
     {
-        //
+        $privacypolicy = PrivacyPolicy::findOrFail($id);
+        $privacypolicy->delete();
+        return redirect()->route('admin.privacypolicy.index')->with('success', 'Privacy Policy deleted successfully.');
     }
 }

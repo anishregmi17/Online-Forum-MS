@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommunitiesController;
 use App\Http\Controllers\AboutForumController;
+use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -52,6 +53,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 // route for about forum
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('aboutforum', AboutForumController::class);
+});
+
+// route for privacy policy
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('privacypolicy', PrivacyPolicyController::class);
 });
 
 // Authentication routes

@@ -179,7 +179,7 @@
         </ul>
       </li>
 
-      {{-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link " data-bs-target="#faqs" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>User Agreement</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -195,7 +195,7 @@
             </a>
           </li>
         </ul>
-      </li> --}}
+      </li>
 
       <li class="nav-item">
         <a class="nav-link " data-bs-target="#settings" data-bs-toggle="collapse" href="#">

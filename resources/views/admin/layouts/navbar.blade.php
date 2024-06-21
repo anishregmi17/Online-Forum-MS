@@ -10,7 +10,7 @@
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
+      <form class="search-form d-flex align-items-center" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
@@ -20,7 +20,7 @@
       <ul class="d-flex align-items-center">
 
         <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
+          <a class="nav-link nav-icon search-bar-toggle>
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->
@@ -37,7 +37,7 @@
               You have 4 new notifications
               <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
-            <li>
+            {{-- <li>
               <hr class="dropdown-divider">
             </li>
 
@@ -94,7 +94,7 @@
             </li>
             <li class="dropdown-footer">
               <a href="#">Show all notifications</a>
-            </li>
+            </li> --}}
 
           </ul><!-- End Notification Dropdown Items -->
 
@@ -115,7 +115,7 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-
+{{--
             <li class="message-item">
               <a href="#">
                 <img src="../assets/img/messages-1.jpg" alt="" class="rounded-circle">
@@ -142,8 +142,8 @@
             </li>
             <li>
               <hr class="dropdown-divider">
-            </li>
-
+            </li> --}}
+{{--
             <li class="message-item">
               <a href="#">
                 <img src="../assets/img/messages-3.jpg" alt="" class="rounded-circle">
@@ -160,7 +160,7 @@
 
             <li class="dropdown-footer">
               <a href="#">Show all messages</a>
-            </li>
+            </li> --}}
 
           </ul><!-- End Messages Dropdown Items -->
 
@@ -213,7 +213,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>

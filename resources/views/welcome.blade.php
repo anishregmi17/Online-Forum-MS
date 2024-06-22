@@ -16,7 +16,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #f1e3e3;
+            background-color: #5cc1d3;
             color: #333;
         }
         .header {

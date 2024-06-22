@@ -104,7 +104,7 @@
             text-decoration: none; /* Ensure no underline */
         }
         .button-link.register {
-            background-color: #dd4b39; /* Google-like red color */
+            background-color: #be2510; /* Google-like red color */
         }
 
         .button-link.register:hover {

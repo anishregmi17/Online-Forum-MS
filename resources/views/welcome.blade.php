@@ -93,7 +93,7 @@
             border: none; /* Remove border */
             text-decoration: none; /* Remove underline from links */
             color: white; /* Text color */
-            background-color: #3b5998; /* Facebook-like blue color */
+            background-color: #5e75a7; /* Facebook-like blue color */
             border-radius: 5px; /* Rounded corners */
             transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
         }
@@ -131,7 +131,11 @@
     </header>
     <main class="main">
         <h1>Welcome to Our Community!</h1>
-        <p>Join our online forum to connect with like-minded individuals, share yours thoughts, and explore new ideas. Our community is designed to foster healthy discussions and provide a platform for you to express yourself.</p>
+        <h2>Pokhara Online Forum</h2>
+        <p style="text-align: justify; margin: 1rem;">
+            Pokhara Online Forum is a vibrant digital community based in Pokhara, Nepal. It serves as a hub for locals and tourists to share news, updates, and insights about the city. Members can find information on local events, popular tourist destinations, and recommendations for dining and accommodation. .
+        </p>
+
         <div class="features">
             <div class="feature">
                 <h3>Engage in Discussions</h3>
@@ -148,7 +152,7 @@
         </div>
     </main>
     <footer class="footer">
-        <p>&copy; 2024 Pokhara Online Forum. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>&copy; 2024 Pokhara Online Forum. All rights reserved. <a href="">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </body>
 </html>

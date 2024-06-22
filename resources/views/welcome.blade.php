@@ -73,9 +73,9 @@
             line-height: 1.6;
         }
         .footer {
-            background-color: #333;
+            background-color: #444343;
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             margin-top: 2rem;
         }

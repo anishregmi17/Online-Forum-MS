@@ -16,7 +16,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #5cc1d3;
+            background-color: #ffffff;
             color: #333;
         }
         .header {
@@ -73,7 +73,7 @@
             line-height: 1.6;
         }
         .footer {
-            background-color: #444343;
+            background-color: #463163;
             color: white;
             padding: 10px;
             text-align: center;
@@ -129,6 +129,7 @@
             <a href="{{ route('register') }}" class="button-link register">Register</a>
         </div>
     </header>
+    <hr style="border: 1px solid black;">
     <main class="main">
         <h1>Welcome to Our Community!</h1>
         <h2>Pokhara Online Forum</h2>

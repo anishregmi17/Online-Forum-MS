@@ -42,12 +42,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
         .main h1 {
             font-size: 3rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .features {
             display: flex;

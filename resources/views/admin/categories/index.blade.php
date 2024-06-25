@@ -3,10 +3,10 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8 mt-5">
-            <h1>Communities</h1>
+        <div class="col-md-12 mt-5">
+            <h1>Categories</h1>
 
-            <a href="{{ route('admin.communities.create') }}" class="btn btn-success mb-3">Create New Community</a>
+            <a href="{{ route('admin.categories.create') }}" class="btn btn-success mb-3">Create New Category</a>
 
             @if (session('success'))
                 <div class="alert alert-success">
@@ -23,14 +23,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($communities as $community)
+                    @foreach ($categories as $category)
                         <tr>
-                            <td>{{ $community->title }}</td>
-                            <td>{{ $community->icon }}</td>
+                            <td>{{ $category->title }}</td>
+                            <td>{{ $category->icon }}</td>
                             <td>
-                                <a href="{{ route('admin.communities.show', $community->id) }}" class="btn btn-info">Show</a>
-                                <a href="{{ route('admin.communities.edit', $community->id) }}" class="btn btn-primary">Edit</a>
-                                <form action="{{ route('admin.communities.destroy', $community->id) }}" method="POST" style="display:inline">
+                                <a href="{{ route('admin.categories.show', $category->id) }}" class="btn btn-info">Show</a>
+                                <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-primary">Edit</a>
+                                <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" style="display:inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>

@@ -29,23 +29,23 @@
         </ul>
       </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link " data-bs-target="#services" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="services" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../services/create.php">
+            <a href="{{route('admin.categories.create')}}">
               <i class="bi bi-circle"></i><span>Add Category</span>
             </a>
           </li>
           <li>
-            <a href="../services/index.php" class="active">
+            <a href="{{route('admin.categories.index')}}" class="active">
               <i class="bi bi-circle"></i><span>Manage Category</span>
             </a>
           </li>
         </ul>
-      </li><!-- End Forms Nav -->
+      </li><!-- End Forms Nav --> --}}
 
 
      <li class="nav-item">

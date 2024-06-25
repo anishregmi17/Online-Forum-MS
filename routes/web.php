@@ -9,6 +9,7 @@ use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ContentPolicyController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserAgreementController;
 
 // Logout route
@@ -74,6 +75,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 // route for community
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('communities', CommunityController::class);
+});
+
+// route for community
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('communities', CategoryController::class);
 });
 
 // Authentication routes

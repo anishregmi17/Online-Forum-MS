@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Communities extends Model
+class Community extends Model
 {
     use HasFactory;
-    protected $fillable = ['icon','title'];
+    protected $fillable = ['title', 'icon'];
 
 }

@@ -54,12 +54,12 @@
         </a>
         <ul id="features" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="../features/create.php">
+            <a href="{{route('admin.communities.create')}}">
               <i class="bi bi-circle"></i><span>Add Communities</span>
             </a>
           </li>
           <li>
-            <a href="../features/index.php" class="active">
+            <a href="{{route('admin.communities.index')}}" class="active">
               <i class="bi bi-circle"></i><span>Manage Communities</span>
             </a>
           </li>

@@ -3,7 +3,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\CommunitiesController;
+use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\AboutForumController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -48,8 +48,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Post resource routes
     Route::resource('posts', PostController::class);
 
-    // Categories resource routes
-    Route::resource('communities', CommunitiesController::class);
 });
 
 // route for about forum
@@ -73,6 +71,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('useragreements', UserAgreementController::class);
 });
 
+// route for community
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('communities', CommunityController::class);
+});
 
 // Authentication routes
 require __DIR__.'/auth.php';

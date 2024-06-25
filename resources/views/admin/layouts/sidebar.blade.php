@@ -30,6 +30,24 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link " data-bs-target="#features" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Communities</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="features" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{route('admin.communities.create')}}">
+              <i class="bi bi-circle"></i><span>Add Communities</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('admin.communities.index')}}" class="active">
+              <i class="bi bi-circle"></i><span>Manage Communities</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link " data-bs-target="#services" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -48,23 +66,7 @@
       </li><!-- End Forms Nav -->
 
 
-     <li class="nav-item">
-        <a class="nav-link " data-bs-target="#features" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Communities</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="features" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{route('admin.communities.create')}}">
-              <i class="bi bi-circle"></i><span>Add Communities</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{route('admin.communities.index')}}" class="active">
-              <i class="bi bi-circle"></i><span>Manage Communities</span>
-            </a>
-          </li>
-        </ul>
-      </li>
+
 
       <li class="nav-item">
         <a class="nav-link " data-bs-target="#testimonials" data-bs-toggle="collapse" href="#">

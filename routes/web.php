@@ -79,7 +79,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
 // route for community
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('communities', CategoryController::class);
+    Route::resource('categories', CategoryController::class);
 });
 
 // Authentication routes

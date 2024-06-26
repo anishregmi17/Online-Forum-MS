@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-12 mt-5">
+        <div class="col-md-8 mt-5">
             <h1>Categories</h1>
 
             <a href="{{ route('admin.categories.create') }}" class="btn btn-success mb-3">Create New Category</a>

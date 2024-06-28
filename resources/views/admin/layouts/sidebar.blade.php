@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="{{ route('documentation') }}">
           {{-- <i class="bi bi-grid"></i> --}}
           <span>Online Forum Dashboard</span>
         </a>
@@ -239,12 +239,12 @@
 
 
 
-      <li class="nav-item">
-        <a class="nav-link " href="../documentation/document.php">
-          Documentation
-        </a>
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('documentation') }}">
+        Documentation
+    </a>
+</li>
 
-      </li>
 
     </ul>
 

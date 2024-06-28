@@ -13,7 +13,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserAgreementController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\SettingController;
-
+use App\Http\Controllers\HomeController;
 
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
@@ -94,5 +94,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('settings', SettingController::class);
 });
 
+Route::get('/documentation', [HomeController::class, 'documentation'])->name('documentation');
+
+
 // Authentication routes
 require __DIR__.'/auth.php';
+
+

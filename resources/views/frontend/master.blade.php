@@ -208,7 +208,7 @@
                           </ul>
                 @endforeach
 
-                
+
               {{-- <li>
                 <a href="sports.html"
                   >Sports Related Post <i class="fa-solid fa-medal"></i

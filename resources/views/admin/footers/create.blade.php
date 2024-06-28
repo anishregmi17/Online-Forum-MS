@@ -18,7 +18,17 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control" required>
+                    <input
+                        type="text"
+                        name="title"
+                        class="form-control @error('title') is-invalid @enderror"
+                        value="{{ old('title') }}"
+                        required
+                        placeholder="Enter title"
+                    >
+                    @error('title')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-success">Create Footer</button>

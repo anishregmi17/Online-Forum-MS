@@ -1,41 +1,88 @@
-[2:47 PM, 6/28/2024] Salina Adhikari: <?php
+<?php
 
-namespace App\Models;
+namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Footer;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class footer extends Model
+class FooterController extends Controller
 {
-    use HasFactory;
-    protected $fillable = ['title'];
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $footers = Footer::all();
+        return view('admin.footers.index', compact('footers'));
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('admin.footers.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+        ]);
+
+        Footer::create($request->only('title'));
+
+        return redirect()->route('admin.footers.index')
+                         ->with('success', 'Footer created successfully.');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show($id)
+    {
+        $footer = Footer::findOrFail($id);
+        return view('admin.footers.show', compact('footer'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id)
+    {
+        $footer = Footer::findOrFail($id);
+        return view('admin.footers.edit', compact('footer'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+        ]);
+
+        $footer = Footer::findOrFail($id);
+        $footer->update($request->only('title'));
+
+        return redirect()->route('admin.footers.index')
+                         ->with('success', 'Footer updated successfully.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id)
+    {
+        $footer = Footer::findOrFail($id);
+        $footer->delete();
+
+        return redirect()->route('admin.footers.index')
+                         ->with('success', 'Footer deleted successfully.');
+    }
 }
-[2:47 PM, 6/28/2024] Salina Adhikari: <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('footers', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('footers');
-    }
-};

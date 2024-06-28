@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\setting;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -12,54 +12,60 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+        $settings = Setting::all();
+        return view('admin.settings.index', compact('settings'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.settings.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'site_key' => 'required|string|max:255|unique:settings',
+            'site_value' => 'required|string|max:255',
+        ]);
+
+        Setting::create($request->all());
+
+        return redirect()->route('admin.settings.index')
+                         ->with('success', 'Setting created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(setting $setting)
+    public function show($id)
     {
-        //
+        $setting = Setting::findOrFail($id);
+        return view('admin.settings.show', compact('setting'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(setting $setting)
+    public function edit($id)
     {
-        //
+        $setting = Setting::findOrFail($id);
+        return view('admin.settings.edit', compact('setting'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, setting $setting)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'site_key' => 'required|string|max:255|unique:settings,site_key,' . $id,
+            'site_value' => 'required|string|max:255',
+        ]);
+
+        $setting = Setting::findOrFail($id);
+        $setting->update($request->all());
+
+        return redirect()->route('admin.settings.index')
+                         ->with('success', 'Setting updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(setting $setting)
+    public function destroy($id)
     {
-        //
+        $setting = Setting::findOrFail($id);
+        $setting->delete();
+
+        return redirect()->route('admin.settings.index')
+                         ->with('success', 'Setting deleted successfully.');
     }
 }

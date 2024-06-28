@@ -217,23 +217,26 @@
         </ul>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link " data-bs-target="#footers" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Footer</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="footers" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{route('admin.footers.create')}}">
-              <i class="bi bi-circle"></i><span>Add Footer</span>
+
+<li class="nav-item">
+    <a class="nav-link" data-bs-target="#footers" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Footer</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="footers" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+            <a href="{{ route('admin.footers.create') }}">
+                <i class="bi bi-circle"></i><span>Add Footer</span>
             </a>
-          </li>
-          <li>
-            <a href="{{route('admin.footers.index')}}" class="active">
-              <i class="bi bi-circle"></i><span>Manage Footer</span>
+        </li>
+        <li>
+            <a href="{{ route('admin.footers.index') }}" class="active">
+                <i class="bi bi-circle"></i><span>Manage Footer</span>
             </a>
-          </li>
-        </ul>
-      </li>
+        </li>
+    </ul>
+</li>
+
+
 
       <li class="nav-item">
         <a class="nav-link " href="../documentation/document.php">

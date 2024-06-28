@@ -3,6 +3,8 @@
 
 @section('footer')
   <!-- footer part for online forum -->
+   @foreach ($footers as $footer)
+
   <footer
   style="
     text-align: center;
@@ -11,13 +13,14 @@
   "
 >
   <p>
-    &copy; 2024 POKHARA FORUM. All rights reserved. |
+        {{-- &copy;  --}}
+     {{$footer->title}}|
     <a href="contentpolicy.html">Content Policy</a> |
     <a href="privacypolicy.html">Privacy Policy</a> |
     <a href="useragreement.html">User Agreement</a>
   </p>
 </footer>
-
+@endforeach
 <!-- javascript link part -->
 <script
   src="https://kit.fontawesome.com/3110fbbca9.js"

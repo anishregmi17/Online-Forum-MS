@@ -199,23 +199,24 @@
         </ul>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link " data-bs-target="#settings" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>settings</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="settings" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="../settings/create.php">
-              <i class="bi bi-circle"></i><span>Add settings</span>
+<li class="nav-item">
+    <a class="nav-link" data-bs-target="#settings" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Settings</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="settings" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+            <a href="{{ route('admin.settings.create') }}">
+                <i class="bi bi-circle"></i><span>Add Setting</span>
             </a>
-          </li>
-          <li>
-            <a href="../settings/index.php" class="active">
-              <i class="bi bi-circle"></i><span>Manage settings</span>
+        </li>
+        <li>
+            <a href="{{ route('admin.settings.index') }}" class="active">
+                <i class="bi bi-circle"></i><span>Manage Settings</span>
             </a>
-          </li>
-        </ul>
-      </li>
+        </li>
+    </ul>
+</li>
+
 
 
 <li class="nav-item">

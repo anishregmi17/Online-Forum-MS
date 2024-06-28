@@ -12,6 +12,8 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserAgreementController;
 use App\Http\Controllers\FooterController;
+use App\Http\Controllers\SettingController;
+
 
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
@@ -86,6 +88,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 // route for footer
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('footers', FooterController::class);
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('settings', SettingController::class);
 });
 
 // Authentication routes

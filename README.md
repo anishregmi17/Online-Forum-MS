@@ -3,8 +3,7 @@ An online forum, also known as a message board or discussion board, is a virtual
 1.Welcome Page : <br>
 Welcome to our online forum! Engage in insightful discussions, share your knowledge, and connect with like-minded individuals from around the world. We're excited to have you as part of our vibrant community!
 
-![alt text](image-2.png)(https://github.com/anishregmi17/Online-Forum-MS/assets/103883548/8c8a5d60-a6e7-4152-81b3-170f7fa0f670)
-
+![alt text](image-2.png)
 2.Login Page: <br>
 A login page is a gateway for users to access a website or application securely. It typically requires users to enter their username and password to authenticate their identity. This process ensures that only authorized users can access sensitive information or personalized services.
 ![Screenshot 2024-06-19 171526](https://github.com/anishregmi17/Online-Forum-MS/assets/103883548/77bc716f-ca83-4cb3-a1dc-aac137743e2d)

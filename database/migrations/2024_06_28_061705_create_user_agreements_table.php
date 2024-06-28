@@ -11,7 +11,7 @@ class CreateUseragreementsTable extends Migration
      */
     public function up(): void
     {
-        Schema::create('useragreements', function (Blueprint $table) {
+        Schema::create('user_agreements', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('content');
@@ -24,6 +24,6 @@ class CreateUseragreementsTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('useragreements');
+        Schema::dropIfExists('user_agreements');
     }
 }

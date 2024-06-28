@@ -196,15 +196,20 @@
               </li>
             </ul>
 
+            @foreach ($categories as $category)
             <h3>Categories</h3>
             <!-- Dashboard Content Goes Here -->
             <ul class="inline-item-list">
               <li>
                 <a href="health.html"
-                  >Health Related Post <i class="fa-regular fa-hospital"></i
+                  >{{$category->title}} <i class="fa-regular fa-hospital"></i
                 ></a>
               </li>
-              <li>
+                          </ul>
+                @endforeach
+
+                
+              {{-- <li>
                 <a href="sports.html"
                   >Sports Related Post <i class="fa-solid fa-medal"></i
                 ></a>
@@ -218,9 +223,15 @@
                 <a href="travel.html"
                   >Travel Related Post <i class="fa-solid fa-location-dot"></i
                 ></a>
-              </li>
-            </ul>
+              </li> --}}
+
+
+
+
+
             <br />
+
+
             <h3>Resources</h3>
             <!-- Dashboard Content Goes Here -->
             <ul class="inline-item-list">

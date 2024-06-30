@@ -245,10 +245,10 @@
                                 or someone eager to delve into the realms of education and beyond, our forum provides a dynamic
                                 platform for exploration and interaction.
                                 <br>
-                            <h4>Tech Corner</h4> Dive into the ever-evolving world of technology, where innovation knows no
+                            <h4>Tech Corner</h4> <p>Dive into the ever-evolving world of technology, where innovation knows no
                             bounds. Discuss the latest gadgets, software developments, coding techniques, and emerging tech
                             trends. From artificial intelligence to blockchain technology, there's always something new to
-                            discover and discuss.
+                            discover and discuss.</p>
 
                             <h4>Sports Zone</h4> Are you a sports fanatic craving for the thrill of the game? Join fellow
                             enthusiasts in lively discussions about your favorite sports, teams, players, and matches. From

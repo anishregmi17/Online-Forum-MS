@@ -44,7 +44,7 @@
                 </div>
                 <!-- js for card see more -->
                 <script>
-                    function toggleText() {
+                    function toggleText1() {
                         var dots = document.getElementById("dots");
                         var moreText = document.getElementById("more");
                         var btnText = document.getElementById("myBtn");
@@ -61,8 +61,8 @@
                     }
                 </script>
 
-                <img src=https://th.bing.com/th/id/R.14bc86cd473d37b966d22b169b8adc26?rik=aeoA%2bYxshsmzmA&riu=http%3a%2f%2fwww.comparethecloud.net%2fwp-content%2fuploads%2f2018%2f12%2fbinary-1536651_1920.jpg&ehk=BmC4IWwLoeRc4DnH%2bge8k7O9fo1bxlS4LkkkJLpIm88%3d&risl=&pid=ImgRaw&r=0
-                    class="card-img-top" alt="..." />
+                <img src="https://en.sepoin.com/wp-content/uploads/2020/01/AI-ML-4.jpg" class="card-img-top"
+                    alt="..." />
                 <div class="d-flex align-items-center icon1">
                     <div>
                         <a href=""><i class="far fa-thumbs-up me-3 p-2"></i></a>
@@ -77,7 +77,53 @@
             </div>
         </div>
 
-        <br />
+
+        @foreach ($posts as $post)
+            <div class="card" style="max-width: 3000px">
+                <div class="card-body">
+                    <div class="profile-section">
+                        <a href="profile.html">
+                            <img src="{{ $post->profileimage ? asset('uploads/' . $post->profileimage) : asset('uploads/profile.jpg') }}"
+                                alt="pic"
+                                style="
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin-right: 10px;
+             " />
+                            <!-- Profile icon -->
+                            <span style="font-weight: bold; color: #070606">{{ $post->username }}</span>
+                            <!-- Username --></a>
+                        <span><small class="text-muted">Last updated at {{ $post->updated_at }}</small></span>
+                    </div>
+                    <div style="color: black">
+                        <h5 class="card-title">
+                            {{ $post->title }}
+                        </h5>
+                        <p class="card-text" id="firstParagraph">
+                            {{ $post->description }}
+                        </p>
+                    </div>
+
+                    <img src=https://th.bing.com/th/id/R.14bc86cd473d37b966d22b169b8adc26?rik=aeoA%2bYxshsmzmA&riu=http%3a%2f%2fwww.comparethecloud.net%2fwp-content%2fuploads%2f2018%2f12%2fbinary-1536651_1920.jpg&ehk=BmC4IWwLoeRc4DnH%2bge8k7O9fo1bxlS4LkkkJLpIm88%3d&risl=&pid=ImgRaw&r=0
+                        class="card-img-top" alt="..." />
+                    <div class="d-flex align-items-center icon1">
+                        <div>
+                            <a href=""><i class="far fa-thumbs-up me-3 p-2"></i></a>
+                            <!-- Thumbs up icon -->
+                            <a href=""> <i class="far fa-comment me-3 p-2"></i></a>
+                            <!-- Comment icon -->
+                            <a href=""> <i class="far fa-comment me-3 p-2"></i></a>
+                            <!-- Comment icon -->
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+
+
+
         <div class="card" style="max-width: 3000px">
             <div class="card-body">
                 <div class="profile-section">
@@ -146,6 +192,8 @@
         </div>
 
         <br />
+
+
         <div class="card" style="max-width: 3000px">
             <div class="card-body">
                 <div class="profile-section">

@@ -3,7 +3,7 @@
 @foreach ($categories as $category)
     <ul class="inline-item-list">
         <li>
-            <a href="health.html">{{ $category->title }} <i class="fa-regular fa-hospital"></i></a>
+            <a href="health.html">{{ $category->title }}-<i class="{{ $category->icon }}"></i></a>
         </li>
     </ul>
 @endforeach

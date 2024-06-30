@@ -10,7 +10,7 @@
                 <li>
                   <a href="#">
                     <span class="font-weight-bold community-name p-2"
-                      >{{$community->title}}<i class="{{$community->icon}}"></i
+                      >{{$community->title}}-<i class="{{$community->icon}}"></i
                     ></span>
                   </a>
                 </li>

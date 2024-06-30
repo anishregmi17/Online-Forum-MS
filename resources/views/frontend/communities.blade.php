@@ -5,16 +5,17 @@
               <h3>Popular Topic Communities</h3>
               <!-- Popular Communities Content Goes Here -->
               <!-- Add more popular communities content here -->
+               @foreach($communities as $community)
               <ul class="list-unstyled">
                 <li>
                   <a href="#">
                     <span class="font-weight-bold community-name p-2"
-                      >r/tech <i class="fa-solid fa-computer"></i
+                      >{{$community->title}}<i class="{{$community->icon}}"></i
                     ></span>
-                    <!-- <img src="profile_icons/tech_icon.png" alt="Tech Community Icon" class="community-icon">
                   </a>
                 </li>
-                <li>
+
+                {{-- <li>
                   <a href="#">
                     <span class="font-weight-bold community-name p-2"
                       >r/sports <i class="fa-solid fa-medal"></i
@@ -39,8 +40,9 @@
                     ></span>
                     <!-- <img src="profile_icons/travel_icon.png" alt="Travel Community Icon" class="community-icon"> -->
                   </a>
-                </li>
-                <li></li>
+                </li> --}}
+
               </ul>
+              @endforeach
             </div>
           </div>

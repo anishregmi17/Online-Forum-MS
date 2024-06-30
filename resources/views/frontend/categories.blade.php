@@ -3,7 +3,7 @@
 @foreach ($categories as $category)
     <ul class="inline-item-list">
         <li>
-            <a href="{{ route('aboutforum') }}">{{ $category->title }}-<i class="{{ $category->icon }}"></i></a>
+            <a href="{{ route('sports') }}">{{ $category->title }}-<i class="{{ $category->icon }}"></i></a>
         </li>
     </ul>
 @endforeach

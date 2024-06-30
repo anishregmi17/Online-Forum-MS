@@ -994,4 +994,5 @@
         </ul>
       </div>
 
-    @yield('footer')
+@include('frontend.footers')
+

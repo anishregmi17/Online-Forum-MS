@@ -236,7 +236,7 @@
             <!-- Dashboard Content Goes Here -->
             <ul class="inline-item-list">
               <li>
-                <a href="aboutforum.html"
+                <a href="{{ route('aboutforum') }}"
                   >About Forum <i class="fa-brands fa-forumbee"></i
                 ></a>
               </li>

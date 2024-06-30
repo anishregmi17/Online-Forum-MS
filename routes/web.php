@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
@@ -40,9 +41,7 @@ Route::middleware(['auth'])->group(function () {
 
 // Admin Panel routes protected by authentication middleware
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', function () {
-        return view('admin.layouts.main');
-    })->name('index');
+    Route::get('/', [HomeController::class, 'documentation'])->name('index'); // Update this line
 
     // Test route
     Route::get('/test', function () {
@@ -52,52 +51,25 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Post resource routes
     Route::resource('posts', PostController::class);
 
-});
-
-// route for about forum
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    // Other admin routes
     Route::resource('aboutforum', AboutForumController::class);
-});
-
-// route for privacy policy
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('privacypolicy', PrivacyPolicyController::class);
-});
-
-// route for content policy
-
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('contentpolicy', ContentPolicyController::class);
-});
-
-// route for user agreement
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('useragreements', UserAgreementController::class);
-});
-
-// route for community
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('communities', CommunityController::class);
-});
-
-// route for community
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('categories', CategoryController::class);
-});
-
-// route for footer
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('footers', FooterController::class);
-});
-
-Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('settings', SettingController::class);
 });
 
+// Route for documentation page
 Route::get('/documentation', [HomeController::class, 'documentation'])->name('documentation');
 
 
+
+Route::get('/aboutforum', function () {
+    return view('frontend.aboutforum');
+})->name('aboutforum');
+
 // Authentication routes
 require __DIR__.'/auth.php';
-
-

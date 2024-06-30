@@ -66,7 +66,7 @@
       </li><!-- End Forms Nav -->
 
 
-
+{{--
 
       <li class="nav-item">
         <a class="nav-link " data-bs-target="#testimonials" data-bs-toggle="collapse" href="#">
@@ -124,7 +124,7 @@
           </li>
         </ul>
       </li><!-- End Forms Nav -->
-
+ --}}
 
 
      <li class="nav-item">

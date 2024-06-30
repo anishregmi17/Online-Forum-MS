@@ -71,5 +71,10 @@ Route::get('/aboutforum', function () {
     return view('frontend.aboutforum');
 })->name('aboutforum');
 
+
+Route::get('/sports', function () {
+    return view('frontend.sports');
+})->name('sports');
+
 // Authentication routes
 require __DIR__.'/auth.php';

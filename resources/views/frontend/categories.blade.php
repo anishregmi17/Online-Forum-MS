@@ -3,7 +3,7 @@
 @foreach ($categories as $category)
     <ul class="inline-item-list">
         <li>
-            <a href="health.html">{{ $category->title }}-<i class="{{ $category->icon }}"></i></a>
+            <a href="{{ route('aboutforum') }}">{{ $category->title }}-<i class="{{ $category->icon }}"></i></a>
         </li>
     </ul>
 @endforeach
@@ -18,6 +18,12 @@
               <li>
                 <a href="technology.html"
                   >Technology Related Post <i class="fa-solid fa-laptop"></i
+                ></a>
+              </li>
+              <li>
+                <li>
+                <a href="technology.html"
+                  >Health Related Post <i class="fa-regular fa-hospital"></i
                 ></a>
               </li>
               <li>

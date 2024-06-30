@@ -105,7 +105,7 @@
                         </p>
                     </div>
 
-                    <img src=https://th.bing.com/th/id/R.14bc86cd473d37b966d22b169b8adc26?rik=aeoA%2bYxshsmzmA&riu=http%3a%2f%2fwww.comparethecloud.net%2fwp-content%2fuploads%2f2018%2f12%2fbinary-1536651_1920.jpg&ehk=BmC4IWwLoeRc4DnH%2bge8k7O9fo1bxlS4LkkkJLpIm88%3d&risl=&pid=ImgRaw&r=0
+                    <img src={{ $post->image ? asset('uploads/' . $post->image) : asset('uploads/19354f8e828066c6800d431022b07088.png') }}
                         class="card-img-top" alt="..." />
                     <div class="d-flex align-items-center icon1">
                         <div>

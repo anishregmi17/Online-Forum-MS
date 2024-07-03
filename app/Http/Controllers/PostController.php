@@ -8,26 +8,17 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $posts = Post::paginate(10);
         return view('admin.posts.index', ['posts' => $posts]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.posts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -52,37 +43,28 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $post = Post::findOrFail($id);
         return view('admin.posts.show', compact('post'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $post = Post::findOrFail($id);
         return view('admin.posts.edit', compact('post'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $post = Post::findOrFail($id);
 
         $request->validate([
-            'profileimage' => 'image|mimes:png,jpg,jpeg|max:20000',
+            'profileimage' => 'image|mimes:png,jpg,jpeg|max:2048',
             'username' => 'required|string|min:2|max:100',
             'title' => 'required|string|min:2|max:100',
             'description' => 'required|string|min:2|max:100',
-            'image' => 'image|mimes:png,jpg,jpeg|max:20000'
+            'image' => 'image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
         if ($request->hasFile('image')) {
@@ -103,9 +85,6 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index')->with('success', 'Post updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $post = Post::findOrFail($id);
@@ -115,9 +94,6 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
     }
 
-    /**
-     * Upload an image.
-     */
     private function uploadImage($image, $path)
     {
         $imageName = md5($image->getClientOriginalName() . time()) . '.' . $image->extension();
@@ -125,9 +101,6 @@ class PostController extends Controller
         return $imageName;
     }
 
-    /**
-     * Delete a file from storage.
-     */
     private function deleteFile($filePath)
     {
         if (File::exists(public_path($filePath))) {

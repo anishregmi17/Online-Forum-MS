@@ -83,14 +83,13 @@
                 <div class="card-body">
                     <div class="profile-section">
                         <a href="profile.html">
-                            <img src="{{ $post->profileimage ? asset('uploads/' . $post->profileimage) : asset('uploads/profile.jpg') }}"
-                                alt="pic"
+                            <img src="{{ asset('assets/image/' . $post->profileimage) }}" alt="pic"
                                 style="
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                margin-right: 10px;
-             " />
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+         " />
                             <!-- Profile icon -->
                             <span style="font-weight: bold; color: #070606">{{ $post->username }}</span>
                             <!-- Username --></a>
@@ -105,8 +104,7 @@
                         </p>
                     </div>
 
-                    <img src={{ $post->image ? asset('uploads/' . $post->image) : asset('uploads/19354f8e828066c6800d431022b07088.png') }}
-                        class="card-img-top" alt="..." />
+                    <img src="{{ asset('assets/image/' . $post->image) }}" class="card-img-top" alt="..." />
                     <div class="d-flex align-items-center icon1">
                         <div>
                             <a href=""><i class="far fa-thumbs-up me-3 p-2"></i></a>

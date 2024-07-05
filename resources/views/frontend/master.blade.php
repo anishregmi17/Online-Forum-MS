@@ -10,6 +10,7 @@
         <h2>Forum Feed</h2>
         <!-- Post Content Goes Here -->
 
+
         @foreach ($posts as $post)
             <div class="card" style="max-width: 3000px">
                 <div class="card-body">
@@ -51,8 +52,6 @@
                 </div>
             </div>
         @endforeach
-
-
 
 
         <div class="card" style="max-width: 3000px">

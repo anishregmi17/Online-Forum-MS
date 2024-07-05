@@ -66,6 +66,10 @@ Route::get('/documentation', [HomeController::class, 'documentation'])->name('do
 
 // Route for about forum page
 Route::get('/aboutforum', [TemplateController::class, 'aboutForum'])->name('aboutforum');
+Route::get('/contentpolicy', [TemplateController::class, 'contentpolicy'])->name('contentpolicy');
+Route::get('/privacypolicy', [TemplateController::class, 'privacypolicy'])->name('privacypolicy');
+Route::get('/useragreement', [TemplateController::class, 'useragreement'])->name('useragreement');
+
 
 // Route for sports page
 Route::get('/sports', function () {

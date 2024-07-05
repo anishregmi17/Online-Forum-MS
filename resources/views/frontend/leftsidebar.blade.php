@@ -30,7 +30,6 @@
                 @endforeach
                 <br />
 
-
                 {{-- <li>
                 <a href="sports.html"
                   >Sports Related Post <i class="fa-solid fa-medal"></i
@@ -60,13 +59,14 @@
                         <a href="{{ route('aboutforum') }}">About Forum <i class="fa-brands fa-forumbee"></i></a>
                     </li>
                     <li>
-                        <a href="contentpolicy.html">Content Policy <i class="fa-solid fa-handcuffs"></i></a>
+                        <a href="{{ route('contentpolicy') }}">Content Policy <i class="fa-solid fa-handcuffs"></i></a>
                     </li>
                     <li>
-                        <a href="privacypolicy.html">Privacy Policy <i class="fa-solid fa-shield-halved"></i></a>
+                        <a href="{{ route('privacypolicy') }}">Privacy Policy <i
+                                class="fa-solid fa-shield-halved"></i></a>
                     </li>
                     <li>
-                        <a href="useragreement.html">User Agreement <i class="fa-solid fa-handshake"></i></a>
+                        <a href="{{ route('useragreement') }}">User Agreement <i class="fa-solid fa-handshake"></i></a>
                     </li>
                 </ul>
             </div>

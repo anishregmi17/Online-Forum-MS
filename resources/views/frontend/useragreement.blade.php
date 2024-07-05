@@ -194,26 +194,27 @@
                 <div class="content">
                     <h2>User Agreement for Online Forum</h2>
                     <!-- Post Content Goes Here -->
-                    <p>
+                    <p
+                        style="text-align: justify; padding: 10px; border: 1px solid #f8f5f5; background-color: #fcfcfc;">
                         This User Agreement is a legal contract between you and Forum governing your access to and use
-                        of our online forum platform . By accessing or using the Platform, you agree to be bound by this
+                        of our online forum platform. By accessing or using the Platform, you agree to be bound by this
                         Agreement. If you do not agree to abide by the terms of this Agreement, you may not access or
                         use the Platform.
-
-
-                        @foreach ($useragreements as $useragreement)
-                            <h4>{{ $useragreement->title }}</h4>
-                            <p>{{ $useragreement->content }}</p>
-                        @endforeach
-
+                    </p>
+                    @foreach ($useragreements as $useragreement)
+                        <h4 style="font-size: 1.2em; color: #333; margin-top: 10px;">{{ $useragreement->title }}</h4>
+                        <p
+                            style="text-align: justify; padding: 10px; border: 1px solid #ccc; background-color: #f7f1f1;">
+                            {{ $useragreement->content }}
+                        </p>
+                    @endforeach
+                    <p
+                        style="text-align: justify; padding: 10px; border: 1px solid #f8f5f5; background-color: #fcfcfc;">
                         By accessing or using the Platform, you acknowledge that you have read, understood, and agree to
-                        be
-                        bound by this Agreement.
+                        be bound by this Agreement.
                     </p>
                 </div>
             </div>
-
-
 
 
             <!-- popular communities -->
@@ -260,20 +261,6 @@
         </div>
     </div>
 
-    <!-- pagination starts here -->
-    <div>
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="sports.html">2</a></li>
-            <li class="page-item"><a class="page-link" href="health.html">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </div>
 
     <!-- footer part for online forum -->
     <footer

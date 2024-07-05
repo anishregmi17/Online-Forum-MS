@@ -13,7 +13,7 @@
                 </ul>
                 <ul class="inline-item-list">
                     <li>
-                        <a href="{{ 'home' }}" class="text-decoration-none">
+                        <a href="{{ 'popular' }}" class="text-decoration-none">
                             <i class="fa-solid fa-fire mb-3"></i> Popular</a>
                     </li>
                 </ul>
@@ -23,7 +23,7 @@
                 @foreach ($categories as $category)
                     <ul class="inline-item-list">
                         <li>
-                            <a href="{{ route('sports') }}">{{ $category->title }}-<i
+                            <a href="{{ route('technology') }}">{{ $category->title }}-<i
                                     class="{{ $category->icon }}"></i></a>
                         </li>
                     </ul>

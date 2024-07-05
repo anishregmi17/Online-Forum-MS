@@ -45,53 +45,69 @@ class TechnologyController extends Controller
 
     public function show(string $id)
     {
-        $technology = Technology::findOrFail($id);
-        return view('admin.technologies.show', compact('technology'));
+        try {
+            $technology = Technology::findOrFail($id);
+            return view('admin.technologies.show', compact('technology'));
+        } catch (\Exception $e) {
+            return redirect()->route('admin.technologies.index')->with('error', 'Technology not found.');
+        }
     }
 
     public function edit(string $id)
     {
-        $technology = Technology::findOrFail($id);
-        return view('admin.technologies.edit', compact('technology'));
+        try {
+            $technology = Technology::findOrFail($id);
+            return view('admin.technologies.edit', compact('technology'));
+        } catch (\Exception $e) {
+            return redirect()->route('admin.technologies.index')->with('error', 'Technology not found.');
+        }
     }
 
     public function update(Request $request, string $id)
     {
-        $technology = Technology::findOrFail($id);
+        try {
+            $technology = Technology::findOrFail($id);
 
-        $request->validate([
-            'profileimage' => 'image|mimes:png,jpg,jpeg|max:2048',
-            'username' => 'required|string|min:2|max:100',
-            'title' => 'required|string|min:2|max:100',
-            'description' => 'required|string|min:2|max:100',
-            'image' => 'image|mimes:png,jpg,jpeg|max:2048'
-        ]);
+            $request->validate([
+                'profileimage' => 'image|mimes:png,jpg,jpeg|max:2048',
+                'username' => 'required|string|min:2|max:100',
+                'title' => 'required|string|min:2|max:100',
+                'description' => 'required|string|min:2|max:100',
+                'image' => 'image|mimes:png,jpg,jpeg|max:2048'
+            ]);
 
-        if ($request->hasFile('image')) {
-            $this->deleteFile($technology->image);
-            $technology->image = 'uploads/' . $this->uploadImage($request->file('image'), 'uploads');
+            if ($request->hasFile('image')) {
+                $this->deleteFile($technology->image);
+                $technology->image = 'uploads/' . $this->uploadImage($request->file('image'), 'uploads');
+            }
+
+            if ($request->hasFile('profileimage')) {
+                $this->deleteFile($technology->profileimage);
+                $technology->profileimage = 'uploads/' . $this->uploadImage($request->file('profileimage'), 'uploads');
+            }
+
+            $technology->username = $request->username;
+            $technology->title = $request->title;
+            $technology->description = $request->description;
+            $technology->save();
+
+            return redirect()->route('admin.technologies.index')->with('success', 'Technology updated successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.technologies.index')->with('error', 'Technology not found.');
         }
-
-        if ($request->hasFile('profileimage')) {
-            $this->deleteFile($technology->profileimage);
-            $technology->profileimage = 'uploads/' . $this->uploadImage($request->file('profileimage'), 'uploads');
-        }
-
-        $technology->username = $request->username;
-        $technology->title = $request->title;
-        $technology->description = $request->description;
-        $technology->save();
-
-        return redirect()->route('admin.technologies.index')->with('success', 'Technology updated successfully.');
     }
 
     public function destroy(string $id)
     {
-        $technology = Technology::findOrFail($id);
-        $this->deleteFile($technology->image);
-        $this->deleteFile($technology->profileimage);
-        $technology->delete();
-        return redirect()->route('admin.technologies.index')->with('success', 'Technology deleted successfully.');
+        try {
+            $technology = Technology::findOrFail($id);
+            $this->deleteFile($technology->image);
+            $this->deleteFile($technology->profileimage);
+            $technology->delete();
+            return redirect()->route('admin.technologies.index')->with('success', 'Technology deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.technologies.index')->with('error', 'Technology not found.');
+        }
     }
 
     private function uploadImage($image, $path)

@@ -14,6 +14,7 @@ use App\Http\Controllers\UserAgreementController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PopularController;
 use App\Http\Controllers\TechnologyController;
 
 // Logout route
@@ -52,10 +53,12 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('posts', PostController::class);
 
         // Technology resource routes
-    Route::resource('technologies', TechnologyController::class);
+    // Route::resource('technologies', TechnologyController::class);
 
     // Other admin routes
     Route::resource('aboutforum', AboutForumController::class);
+        Route::resource('popular', PopularController::class);
+    Route::resource('technologies', TechnologyController::class);
     Route::resource('privacypolicy', PrivacyPolicyController::class);
     Route::resource('contentpolicy', ContentPolicyController::class);
     Route::resource('useragreements', UserAgreementController::class);
@@ -70,20 +73,23 @@ Route::get('/documentation', [HomeController::class, 'documentation'])->name('do
 
 // Route for about forum page
 Route::get('/aboutforum', [TemplateController::class, 'aboutForum'])->name('aboutforum');
+Route::get('/popular', [TemplateController::class, 'popular'])->name('popular');
 Route::get('/contentpolicy', [TemplateController::class, 'contentpolicy'])->name('contentpolicy');
 Route::get('/privacypolicy', [TemplateController::class, 'privacypolicy'])->name('privacypolicy');
 Route::get('/useragreement', [TemplateController::class, 'useragreement'])->name('useragreement');
+Route::get('/technology', [TemplateController::class, 'technology'])->name('technology');
 
 
-// Route for sports page
-Route::get('/sports', function () {
-    return view('frontend.sports');
-})->name('sports');
 
-// route for technology page
-Route::get('/technology', function () {
-    return view('frontend.technology');
-})->name('sports');
+// // Route for sports page
+// Route::get('/sports', function () {
+//     return view('frontend.sports');
+// })->name('sports');
+
+// // route for technology page
+// Route::get('/technology', function () {
+//     return view('frontend.technology');
+// })->name('technology');
 
 // Authentication routes
 require __DIR__.'/auth.php';

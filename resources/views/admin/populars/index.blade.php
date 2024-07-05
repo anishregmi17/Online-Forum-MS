@@ -3,17 +3,14 @@
 @section('content')
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h1>Technologies</h1>
-
+            <div class="col-md-10 mt-5">
+                <h1>Popular Items</h1>
                 @if (session('success'))
                     <div class="alert alert-success">
                         {{ session('success') }}
                     </div>
                 @endif
-
-                <a href="{{ route('admin.technologies.create') }}" class="btn btn-primary mb-3">Create New Technology</a>
-
+                <a href="{{ route('admin.populars.create') }}" class="btn btn-primary mb-3">Create New Popular Item</a>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -27,21 +24,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($technologies as $technology)
+                        @foreach ($populars as $popular)
                             <tr>
-                                <td>{{ $technology->id }}</td>
-                                <td><img src="{{ asset($technology->profileimage) }}" width="50" alt="Profile Image"></td>
-                                <td>{{ $technology->username }}</td>
-                                <td>{{ $technology->title }}</td>
-                                <td>{{ $technology->description }}</td>
-                                <td><img src="{{ asset($technology->image) }}" width="50" alt="Image"></td>
+                                <td>{{ $popular->id }}</td>
+                                <td><img src="{{ asset($popular->profileimage) }}" width="50"></td>
+                                <td>{{ $popular->username }}</td>
+                                <td>{{ $popular->title }}</td>
+                                <td>{{ $popular->description }}</td>
+                                <td><img src="{{ asset($popular->image) }}" width="50"></td>
                                 <td>
-                                    <a href="{{ route('admin.technologies.show', $technology->id) }}"
-                                        class="btn btn-info">View</a>
-                                    <a href="{{ route('admin.technologies.edit', $technology->id) }}"
+                                    <a href="{{ route('admin.populars.show', $popular->id) }}" class="btn btn-info">View</a>
+                                    <a href="{{ route('admin.populars.edit', $popular->id) }}"
                                         class="btn btn-warning">Edit</a>
-                                    <form action="{{ route('admin.technologies.destroy', $technology->id) }}"
-                                        method="POST" style="display: inline;">
+                                    <form action="{{ route('admin.populars.destroy', $popular->id) }}" method="POST"
+                                        style="display: inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -51,6 +47,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $populars->links() }}
             </div>
         </div>
     </div>

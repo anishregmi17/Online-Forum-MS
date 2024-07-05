@@ -2,64 +2,109 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\popular;
+use App\Models\Popular;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PopularController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $populars = Popular::paginate(10);
+        return view('admin.populars.index', ['populars' => $populars]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.populars.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'profileimage' => 'required|image|mimes:png,jpg,jpeg|max:2048',
+            'username' => 'required|string|min:2|max:100',
+            'title' => 'required|string|min:2|max:100',
+            'description' => 'required|string|min:2|max:100',
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+        ]);
+
+        $profileImageName = $this->uploadImage($request->file('profileimage'), 'uploads');
+        $imageName = $this->uploadImage($request->file('image'), 'uploads');
+
+        Popular::create([
+            'profileimage' => 'uploads/' . $profileImageName,
+            'username' => $request->username,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => 'uploads/' . $imageName,
+        ]);
+
+        return redirect()->route('admin.populars.index')->with('success', 'Popular item created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(popular $popular)
+    public function show(string $id)
     {
-        //
+        $popular = Popular::findOrFail($id);
+        return view('admin.populars.show', compact('popular'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(popular $popular)
+    public function edit(string $id)
     {
-        //
+        $popular = Popular::findOrFail($id);
+        return view('admin.populars.edit', compact('popular'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, popular $popular)
+    public function update(Request $request, string $id)
     {
-        //
+        $popular = Popular::findOrFail($id);
+
+        $request->validate([
+            'profileimage' => 'image|mimes:png,jpg,jpeg|max:2048',
+            'username' => 'required|string|min:2|max:100',
+            'title' => 'required|string|min:2|max:100',
+            'description' => 'required|string|min:2|max:100',
+            'image' => 'image|mimes:png,jpg,jpeg|max:2048'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $this->deleteFile($popular->image);
+            $popular->image = 'uploads/' . $this->uploadImage($request->file('image'), 'uploads');
+        }
+
+        if ($request->hasFile('profileimage')) {
+            $this->deleteFile($popular->profileimage);
+            $popular->profileimage = 'uploads/' . $this->uploadImage($request->file('profileimage'), 'uploads');
+        }
+
+        $popular->username = $request->username;
+        $popular->title = $request->title;
+        $popular->description = $request->description;
+        $popular->save();
+
+        return redirect()->route('admin.populars.index')->with('success', 'Popular item updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(popular $popular)
+    public function destroy(string $id)
     {
-        //
+        $popular = Popular::findOrFail($id);
+        $this->deleteFile($popular->image);
+        $this->deleteFile($popular->profileimage);
+        $popular->delete();
+        return redirect()->route('admin.populars.index')->with('success', 'Popular item deleted successfully.');
+    }
+
+    private function uploadImage($image, $path)
+    {
+        $imageName = md5($image->getClientOriginalName() . time()) . '.' . $image->extension();
+        $image->move(public_path($path), $imageName);
+        return $imageName;
+    }
+
+    private function deleteFile($filePath)
+    {
+        if (File::exists(public_path($filePath))) {
+            File::delete(public_path($filePath));
+        }
     }
 }

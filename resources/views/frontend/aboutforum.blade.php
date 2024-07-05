@@ -64,21 +64,23 @@
             <div class="content">
                 <h2>About Forum</h2>
                 <!-- Post Content Goes Here -->
-                <p>
+                <p style="text-align: justify; padding: 10px; border: 1px solid #f8f5f5; background-color: #fcfcfc;">
                     Welcome to our online forum, where passionate individuals from diverse backgrounds
                     converge to share knowledge, engage in discussions, and foster connections across a wide array
                     of topics. Whether you're a tech enthusiast, a sports aficionado, a health-conscious individual,
                     or someone eager to delve into the realms of education and beyond, our forum provides a dynamic
                     platform for exploration and interaction.
-
-                    @foreach ($aboutforums as $aboutforum)
-                        <br>
-                        <h4>{{ $aboutforum->text }}</h4>
-                        <p>{{ $aboutforum->description }}</p>
-                    @endforeach
-
+                </p>
+                @foreach ($aboutforums as $aboutforum)
+                    <br>
+                    <h4 style="font-size: 1.2em; color: #333; margin-top: 10px;">{{ $aboutforum->text }}</h4>
+                    <p style="text-align: justify; padding: 10px; border: 1px solid #ccc; background-color: #f7f1f1;">
+                        {{ $aboutforum->description }}</p>
+                @endforeach
             </div>
         </div>
+
+
 
 
         <!-- popular communities -->
@@ -125,20 +127,6 @@
     </div>
 </div>
 
-<!-- pagination starts here -->
-<div>
-    <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="sports.html">2</a></li>
-        <li class="page-item"><a class="page-link" href="health.html">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-        </li>
-    </ul>
-</div>
 
 <!-- footer part for online forum -->
 <footer

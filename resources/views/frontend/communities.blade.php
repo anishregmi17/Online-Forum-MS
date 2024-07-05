@@ -7,7 +7,7 @@
         @foreach ($communities as $community)
             <ul class="list-unstyled">
                 <li>
-                    <a href="#">
+                    <a href="#" style="text-decoration: none;">
                         <span class="font-weight-bold community-name p-2">{{ $community->title }}-<i
                                 class="{{ $community->icon }}"></i></span>
                     </a>

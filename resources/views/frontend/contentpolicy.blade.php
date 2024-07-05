@@ -190,11 +190,14 @@
             </div>
 
             <!-- Post (Middle Column) -->
+            <!-- Post (Middle Column) -->
+            <!-- Post (Middle Column) -->
             <div class="col-md-6">
                 <div class="content">
                     <h2>Content Policy for Online Forum</h2>
                     <!-- Post Content Goes Here -->
-                    <p>
+                    <p
+                        style="text-align: justify; padding: 10px; border: 1px solid #f8f5f5; background-color: #fcfcfc;">
                         Welcome to our online forum! We're excited to have you join our community where users can share
                         and discuss various topics including sports, health, entertainment, and more. To ensure a
                         positive and enriching experience for all members, we have established the following content
@@ -202,18 +205,23 @@
                         <br>
 
                         @foreach ($contentpolicies as $contentpolicy)
-                            <h4>{{ $contentpolicy->title }}</h4>
-                            <p>{{ $contentpolicy->content }}</p>
+                            <h4 style="font-size: 1.2em; color: #333; margin-top: 10px;">{{ $contentpolicy->title }}
+                            </h4>
+                            <p
+                                style="text-align: justify; padding: 10px; border: 1px solid #ccc; background-color: #f7f1f1;">
+                                {{ $contentpolicy->content }}
+                            </p>
                         @endforeach
                         By participating in our online forum, you agree to abide by these content policies. We value
-                        the
-                        diverse perspectives and contributions of our members and strive to maintain a welcoming and
+                        the diverse perspectives and contributions of our members and strive to maintain a welcoming and
                         inclusive environment for everyone.
 
                         Thank you for being a part of our community!
                     </p>
                 </div>
             </div>
+
+
 
             <!-- popular communities -->
             <div class="col-md-3">
@@ -259,20 +267,7 @@
         </div>
     </div>
 
-    <!-- pagination starts here -->
-    <div>
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="sports.html">2</a></li>
-            <li class="page-item"><a class="page-link" href="health.html">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </div>
+
 
     <!-- footer part for online forum -->
     <footer

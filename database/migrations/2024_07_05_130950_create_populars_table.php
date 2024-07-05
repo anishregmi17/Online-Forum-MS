@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('populars', function (Blueprint $table) {
             $table->id();
-            $table->string('profileimage', 150);
-            $table->string('username', 150);
-            $table->string('title', 150);
-            $table->string('description', 150);
-            $table->string('image', 150);
+            $table->string('title');
+            $table->text('description');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

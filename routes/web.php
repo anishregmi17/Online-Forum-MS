@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +25,7 @@ Route::get('/', function () {
 
 // Home route protected by authentication middleware
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [TemplateController::class, 'index'])->name('home');
+    Route::get('/home', [TemplateController::class, 'home'])->name('home');
 
     // Dashboard route
     Route::get('/dashboard', function () {
@@ -65,13 +64,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 // Route for documentation page
 Route::get('/documentation', [HomeController::class, 'documentation'])->name('documentation');
 
+// Route for about forum page
+Route::get('/aboutforum', [TemplateController::class, 'aboutForum'])->name('aboutforum');
 
-
-Route::get('/aboutforum', function () {
-    return view('frontend.aboutforum');
-})->name('aboutforum');
-
-
+// Route for sports page
 Route::get('/sports', function () {
     return view('frontend.sports');
 })->name('sports');

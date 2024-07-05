@@ -197,18 +197,14 @@
                         of topics. Whether you're a tech enthusiast, a sports aficionado, a health-conscious individual,
                         or someone eager to delve into the realms of education and beyond, our forum provides a dynamic
                         platform for exploration and interaction.
-                        <br>
-                    <h4>Tech Corner</h4>
-                    <p>Dive into the ever-evolving world of technology, where innovation knows no
-                        bounds. Discuss the latest gadgets, software developments, coding techniques, and emerging tech
-                        trends. From artificial intelligence to blockchain technology, there's always something new to
-                        discover and discuss.</p>
 
-                    <h4>Sports Zone</h4> Are you a sports fanatic craving for the thrill of the game? Join fellow
-                    enthusiasts in lively discussions about your favorite sports, teams, players, and matches. From
-                    football to basketball, cricket to tennis, and everything in between, share your passion for
-                    sports and engage in friendly debates.
-                    <br>
+                        @foreach ($aboutforums as $aboutforum)
+                            <br>
+                            <h4>{{ $aboutforum->text }}</h4>
+                            <p>{{ $aboutforum->description }}</p>
+                        @endforeach
+
+                        {{--
                     <h4>Health Hub</h4> Your well-being matters, and our health hub is dedicated to promoting healthy
                     living and wellness practices. Explore topics ranging from nutrition and fitness tips to mental
                     health awareness and disease prevention strategies. Share personal experiences, seek advice from
@@ -229,7 +225,7 @@
                     flourish and connections thrive. Whether you're here to share your expertise, seek advice, or
                     simply connect with others who share your interests, you'll find a warm welcome and a wealth of
                     opportunities to engage and grow.
-                    </p>
+                    </p> --}}
                 </div>
             </div>
 

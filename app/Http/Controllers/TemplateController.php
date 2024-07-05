@@ -10,13 +10,18 @@ use Illuminate\Http\Request;
 
 class TemplateController extends Controller
 {
-    public function index()
+    public function aboutForum()
     {
-        $communities = Community::query()->get();
-        $categories = Category::query()->get();
-        $footers = Footer::query()->get();
-        $posts = Post::query()->get();
+        $aboutforums = AboutForum::all();
+        return view('frontend.aboutforum', ['aboutforums' => $aboutforums]);
+    }
 
+    public function home()
+    {
+        $communities = Community::all();
+        $categories = Category::all();
+        $footers = Footer::all();
+        $posts = Post::all();
         return view('frontend.home', compact('categories', 'footers', 'communities', 'posts'));
     }
 }

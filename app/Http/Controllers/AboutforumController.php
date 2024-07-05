@@ -9,7 +9,6 @@ class AboutForumController extends Controller
     public function index()
     {
         $aboutforums = AboutForum::paginate(10);
-                $aboutforums = AboutForum::all();
         return view('admin.aboutforum.index', compact('aboutforums'));
     }
 

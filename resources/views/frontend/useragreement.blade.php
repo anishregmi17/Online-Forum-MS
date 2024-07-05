@@ -171,20 +171,24 @@
                     <!-- Dashboard Content Goes Here -->
                     <ul class="inline-item-list">
                         <li>
-                            <a href="aboutforum.html">About Forum <i class="fa-brands fa-forumbee"></i></a>
+                            <a href="{{ route('aboutforum') }}">About Forum <i class="fa-brands fa-forumbee"></i></a>
                         </li>
                         <li>
-                            <a href="contentpolicy.html">Content Policy <i class="fa-solid fa-handcuffs"></i></a>
+                            <a href="{{ route('contentpolicy') }}">Content Policy <i
+                                    class="fa-solid fa-handcuffs"></i></a>
                         </li>
                         <li>
-                            <a href="privacypolicy.html">Privacy Policy <i class="fa-solid fa-shield-halved"></i></a>
+                            <a href="{{ route('privacypolicy') }}">Privacy Policy <i
+                                    class="fa-solid fa-shield-halved"></i></a>
                         </li>
                         <li>
-                            <a href="useragreement.html">User Agreement <i class="fa-solid fa-handshake"></i></a>
+                            <a href="{{ route('useragreement') }}">User Agreement <i
+                                    class="fa-solid fa-handshake"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
+
             <!-- Post (Middle Column) -->
             <div class="col-md-6">
                 <div class="content">
@@ -280,9 +284,9 @@
       ">
         <p>
             &copy; 2024 POKHARA FORUM. All rights reserved. |
-            <a href="contentpolicy.html">Content Policy</a> |
-            <a href="privacypolicy.html">Privacy Policy</a> |
-            <a href="useragreement.html">User Agreement</a>
+            <a href="{{ route('contentpolicy') }}">Content Policy</a> |
+            <a href="{{ route('privacypolicy') }}">Privacy Policy</a> |
+            <a href="{{ route('useragreement') }}">User Agreement</a>
         </p>
     </footer>
 

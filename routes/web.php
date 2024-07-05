@@ -14,6 +14,7 @@ use App\Http\Controllers\UserAgreementController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TechnologyController;
 
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
@@ -50,6 +51,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Post resource routes
     Route::resource('posts', PostController::class);
 
+        // Technology resource routes
+    Route::resource('technologies', TechnologyController::class);
+
     // Other admin routes
     Route::resource('aboutforum', AboutForumController::class);
     Route::resource('privacypolicy', PrivacyPolicyController::class);
@@ -74,6 +78,11 @@ Route::get('/useragreement', [TemplateController::class, 'useragreement'])->name
 // Route for sports page
 Route::get('/sports', function () {
     return view('frontend.sports');
+})->name('sports');
+
+// route for technology page
+Route::get('/technology', function () {
+    return view('frontend.technology');
 })->name('sports');
 
 // Authentication routes

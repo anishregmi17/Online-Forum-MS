@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <br />
-                
+
                 <h3>Resources</h3>
                 <!-- Dashboard Content Goes Here -->
                 <ul class="inline-item-list">

@@ -186,6 +186,7 @@
                 </div>
             </div>
 
+
             <!-- Post (Middle Column) -->
             <div class="col-md-6">
                 <div class="content">
@@ -204,34 +205,10 @@
                             <p>{{ $aboutforum->description }}</p>
                         @endforeach
 
-                        {{--
-                    <h4>Health Hub</h4> Your well-being matters, and our health hub is dedicated to promoting healthy
-                    living and wellness practices. Explore topics ranging from nutrition and fitness tips to mental
-                    health awareness and disease prevention strategies. Share personal experiences, seek advice from
-                    experts, and support one another on the journey to optimal health.
-                    <br>
-                    <h4>Education Avenue</h4> Lifelong learning is key to personal and professional growth. Whether
-                    you're a student, educator, or lifelong learner, our education avenue offers a wealth of
-                    resources and discussions on a wide range of subjects. From academic pursuits to skill
-                    development and career guidance, empower yourself with knowledge and enrich your learning
-                    journey.
-                    <br>
-                    <h4>Lifestyle Lounge</h4> Beyond the core topics, our forum embraces the richness of life's
-                    experiences. Discover insights on travel destinations, culinary delights, fashion trends, arts,
-                    culture, and more. Engage in conversations about hobbies, interests, and lifestyle choices that
-                    make life fulfilling and enjoyable.
-                    <br>
-                    Join us in shaping the discourse, driving positive change, and building a community where ideas
-                    flourish and connections thrive. Whether you're here to share your expertise, seek advice, or
-                    simply connect with others who share your interests, you'll find a warm welcome and a wealth of
-                    opportunities to engage and grow.
-                    </p> --}}
                 </div>
             </div>
 
-
-
-
+        
             <!-- popular communities -->
             <div class="col-md-3">
                 <div class="content sticky-sidebar">

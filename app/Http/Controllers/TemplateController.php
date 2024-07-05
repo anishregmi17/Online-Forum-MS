@@ -46,3 +46,4 @@ class TemplateController extends Controller
         return view('frontend.home', compact('categories', 'footers', 'communities', 'posts'));
     }
 }
+

@@ -13,21 +13,39 @@
 
           <li class="nav-item">
               <a class="nav-link " data-bs-target="#hero" data-bs-toggle="collapse" href="#">
-                  <i class="bi bi-journal-text"></i><span>Posts</span><i class="bi bi-chevron-down ms-auto"></i>
+                  <i class="bi bi-journal-text"></i><span>Home</span><i class="bi bi-chevron-down ms-auto"></i>
               </a>
               <ul id="hero" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="{{ route('admin.posts.create') }}">
-                          <i class="bi bi-circle"></i><span>Add Post</span>
+                          <i class="bi bi-circle"></i><span>Add Home</span>
                       </a>
                   </li>
                   <li>
                       <a href="{{ route('admin.posts.index') }}" class="active">
-                          <i class="bi bi-circle"></i><span>Manage Post</span>
+                          <i class="bi bi-circle"></i><span>Manage Home</span>
                       </a>
                   </li>
               </ul>
           </li>
+
+          {{-- <li class="nav-item">
+              <a class="nav-link " data-bs-target="#price" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Popular</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="price" class="nav-content collapse" data-bs-parent="">
+                  <li>
+                      <a href="{{ route('admin.populars.create') }}">
+                          <i class="bi bi-circle"></i><span>Add Popular</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.populars.index') }}"class="active">
+                          <i class="bi bi-circle"></i><span>Manage Popular</span>
+                      </a>
+                  </li>
+              </ul>
+          </li> --}}
 
           <li class="nav-item">
               <a class="nav-link " data-bs-target="#technology-hero" data-bs-toggle="collapse" href="#">
@@ -104,23 +122,7 @@
         </ul>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link " data-bs-target="#price" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Popular</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="price" class="nav-content collapse" data-bs-parent="">
-          <li>
-            <a href="../price/create.php">
-              <i class="bi bi-circle"></i><span>Add Popular</span>
-            </a>
-          </li>
-          <li>
-            <a href="../price/index.php" class="active">
-              <i class="bi bi-circle"></i><span>Manage Popular</span>
-            </a>
-          </li>
-        </ul>
-      </li>
+
 
 
 

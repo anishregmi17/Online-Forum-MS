@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <nav-logo class="p-2">
-                        <a href="index.html">
+                        <a href="{{ 'home' }}">
                             <img src="/images/image2.png" alt="Logo" height="50x" width="100px" /></a>
                     </nav-logo>
                 </div>
@@ -139,7 +139,7 @@
                     <!-- Dashboard Content Goes Here -->
                     <ul class="inline-item-list">
                         <li>
-                            <a href="index.html" class="text-decoration-none">
+                            <a href="{{ 'home' }}" class="text-decoration-none">
                                 <i class="fa-solid fa-house"></i> Home</a>
                         </li>
                     </ul>

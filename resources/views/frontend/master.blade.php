@@ -268,6 +268,6 @@
 
 
 
-@include('frontend.pagination')
+{{-- @include('frontend.pagination') --}}
 
 @include('frontend.footers')

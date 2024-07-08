@@ -16,13 +16,7 @@ use Illuminate\Http\Request;
 
 class TemplateController extends Controller
 {
-    public function technologies()
-    {
-        $technologies = Technology::all();
-        return view('frontend.technologies', ['technologies' => $technologies]);
-    }
-
-        public function popular()
+    public function popular()
     {
         $populars = Popular::all();
         return view('frontend.popular', ['populars' => $populars]);
@@ -52,13 +46,19 @@ class TemplateController extends Controller
         return view('frontend.useragreement', ['useragreements' => $useragreements]);
     }
 
+    public function technology()
+{
+    $technologies = Technology::all();
+    return view('frontend.technology', compact('technologies'));
+}
+
+
     public function home()
     {
         $communities = Community::all();
         $categories = Category::all();
         $footers = Footer::all();
         $posts = Post::all();
-
         return view('frontend.home', compact('categories', 'footers', 'communities', 'posts'));
     }
 }

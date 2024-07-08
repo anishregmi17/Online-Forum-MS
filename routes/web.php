@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 // Welcome route
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 // Home route protected by authentication middleware
 Route::middleware(['auth'])->group(function () {
@@ -42,23 +43,18 @@ Route::middleware(['auth'])->group(function () {
 
 // Admin Panel routes protected by authentication middleware
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [HomeController::class, 'documentation'])->name('index'); // Update this line
+    Route::get('/', [HomeController::class, 'documentation'])->name('index');
 
     // Test route
     Route::get('/test', function () {
         return view('admin.test');
     })->name('test');
 
-    // Post resource routes
+    // Resource routes
     Route::resource('posts', PostController::class);
-
-        // Technology resource routes
-    // Route::resource('technologies', TechnologyController::class);
-
-    // Other admin routes
-    Route::resource('aboutforum', AboutForumController::class);
-        Route::resource('popular', PopularController::class);
     Route::resource('technologies', TechnologyController::class);
+    Route::resource('aboutforum', AboutForumController::class);
+    Route::resource('popular', PopularController::class);
     Route::resource('privacypolicy', PrivacyPolicyController::class);
     Route::resource('contentpolicy', ContentPolicyController::class);
     Route::resource('useragreements', UserAgreementController::class);
@@ -68,10 +64,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('settings', SettingController::class);
 });
 
-// Route for documentation page
+// Public routes
 Route::get('/documentation', [HomeController::class, 'documentation'])->name('documentation');
-
-// Route for about forum page
 Route::get('/aboutforum', [TemplateController::class, 'aboutForum'])->name('aboutforum');
 Route::get('/popular', [TemplateController::class, 'popular'])->name('popular');
 Route::get('/contentpolicy', [TemplateController::class, 'contentpolicy'])->name('contentpolicy');
@@ -79,18 +73,5 @@ Route::get('/privacypolicy', [TemplateController::class, 'privacypolicy'])->name
 Route::get('/useragreement', [TemplateController::class, 'useragreement'])->name('useragreement');
 Route::get('/technology', [TemplateController::class, 'technology'])->name('technology');
 
-
-
-// // Route for sports page
-// Route::get('/sports', function () {
-//     return view('frontend.sports');
-// })->name('sports');
-
-// // route for technology page
-// Route::get('/technology', function () {
-//     return view('frontend.technology');
-// })->name('technology');
-
 // Authentication routes
 require __DIR__.'/auth.php';
-

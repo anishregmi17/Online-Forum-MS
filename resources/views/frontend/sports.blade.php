@@ -139,7 +139,7 @@
                     <!-- Dashboard Content Goes Here -->
                     <ul class="inline-item-list">
                         <li>
-                            <a href="index.html" class="text-decoration-none">
+                            <a href="{{ 'home' }}" class="text-decoration-none">
                                 <i class="fa-solid fa-house"></i> Home</a>
                         </li>
                     </ul>
@@ -191,7 +191,7 @@
                 <div class="content">
                     <h2>SportsFeed</h2>
                     <!-- Post Content Goes Here -->
-                    
+
 
                     <div class="card" style="max-width: 3000px">
                         <div class="card-body">

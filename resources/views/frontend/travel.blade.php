@@ -168,7 +168,7 @@
             <!-- Dashboard Content Goes Here -->
             <ul class="inline-item-list">
               <li>
-                <a href="index.html" class="text-decoration-none">
+                <a href="{{ 'home' }}" class="text-decoration-none">
                   <i class="fa-solid fa-house"></i> Home</a
                 >
               </li>

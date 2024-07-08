@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <nav-logo class="p-2">
-                        <a href="index.html">
+                        <a href="{{ 'home' }}">
                             <img src="/images/image2.png" alt="Logo" height="50x" width="100px" /></a>
                     </nav-logo>
                 </div>

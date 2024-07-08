@@ -29,23 +29,7 @@
               </ul>
           </li>
 
-          {{-- <li class="nav-item">
-              <a class="nav-link " data-bs-target="#price" data-bs-toggle="collapse" href="#">
-                  <i class="bi bi-journal-text"></i><span>Popular</span><i class="bi bi-chevron-down ms-auto"></i>
-              </a>
-              <ul id="price" class="nav-content collapse" data-bs-parent="">
-                  <li>
-                      <a href="{{ route('admin.populars.create') }}">
-                          <i class="bi bi-circle"></i><span>Add Popular</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="{{ route('admin.populars.index') }}"class="active">
-                          <i class="bi bi-circle"></i><span>Manage Popular</span>
-                      </a>
-                  </li>
-              </ul>
-          </li> --}}
+
 
           <li class="nav-item">
               <a class="nav-link " data-bs-target="#technology-hero" data-bs-toggle="collapse" href="#">
@@ -64,6 +48,7 @@
                   </li>
               </ul>
           </li>
+
 
           <li class="nav-item">
               <a class="nav-link " data-bs-target="#features" data-bs-toggle="collapse" href="#">
@@ -84,22 +69,23 @@
           </li>
 
           <li class="nav-item">
-              <a class="nav-link " data-bs-target="#services" data-bs-toggle="collapse" href="#">
-                  <i class="bi bi-journal-text"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
+              <a class="nav-link" data-bs-target="#populars" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Populars</span><i class="bi bi-chevron-down ms-auto"></i>
               </a>
-              <ul id="services" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+              <ul id="populars" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                   <li>
-                      <a href="{{ route('admin.categories.create') }}">
-                          <i class="bi bi-circle"></i><span>Add Category</span>
+                      <a href="{{ route('admin.populars.create') }}">
+                          <i class="bi bi-circle"></i><span>Add Popular</span>
                       </a>
                   </li>
                   <li>
-                      <a href="{{ route('admin.categories.index') }}" class="active">
-                          <i class="bi bi-circle"></i><span>Manage Category</span>
+                      <a href="{{ route('admin.populars.index') }}">
+                          <i class="bi bi-circle"></i><span>Manage Popular</span>
                       </a>
                   </li>
               </ul>
-          </li><!-- End Forms Nav -->
+          </li>
+
 
 
           {{--
@@ -222,6 +208,8 @@
               </ul>
           </li>
 
+
+
           <li class="nav-item">
               <a class="nav-link" data-bs-target="#settings" data-bs-toggle="collapse" href="#">
                   <i class="bi bi-journal-text"></i><span>Settings</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -261,7 +249,7 @@
           </li>
 
 
-
+          <br>
           <li class="nav-item">
               <a class="nav-link" href="{{ route('documentation') }}">
                   Documentation

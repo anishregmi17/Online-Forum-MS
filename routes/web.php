@@ -54,7 +54,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('posts', PostController::class);
     Route::resource('technologies', TechnologyController::class);
     Route::resource('aboutforum', AboutForumController::class);
-    Route::resource('popular', PopularController::class);
+    Route::resource('populars', PopularController::class);
     Route::resource('privacypolicy', PrivacyPolicyController::class);
     Route::resource('contentpolicy', ContentPolicyController::class);
     Route::resource('useragreements', UserAgreementController::class);

@@ -59,6 +59,7 @@ class TemplateController extends Controller
         $categories = Category::all();
         $footers = Footer::all();
         $posts = Post::all();
+        // $populars = Popular::all();
         return view('frontend.home', compact('categories', 'footers', 'communities', 'posts'));
     }
 }

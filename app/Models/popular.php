@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Popular extends Model
 {
     use HasFactory;
-    protected $fillable = ['profileimage', 'username','title','description' , 'image'];
+    protected $fillable = ['profileimage', 'username','title','description','image'];
 }

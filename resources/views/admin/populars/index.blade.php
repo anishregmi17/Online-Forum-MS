@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-10 mt-5">
+            <div class="col-md-8 mt-5">
                 <h1>Popular Items</h1>
                 @if (session('success'))
                     <div class="alert alert-success">

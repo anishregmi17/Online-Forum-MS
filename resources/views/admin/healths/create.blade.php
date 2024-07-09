@@ -4,19 +4,17 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8 mt-5">
-                <h1>Create New Sport</h1>
-
-                @if ($errors->any())
+                <h1>Create New Health</h1>
+                @if($errors->any())
                     <div class="alert alert-danger">
                         <ul>
-                            @foreach ($errors->all() as $error)
+                            @foreach($errors->all() as $error)
                                 <li>{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
                 @endif
-
-                <form action="{{ route('admin.sports.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.healths.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="profileimage">Profile Image</label>
@@ -32,13 +30,13 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="description" class="form-control" rows="5" required></textarea>
+                        <textarea name="description" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="image">Image</label>
                         <input type="file" name="image" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-success">Create Sport</button>
+                    <button type="submit" class="btn btn-success">Create Health</button>
                 </form>
             </div>
         </div>

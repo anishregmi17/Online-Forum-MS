@@ -16,7 +16,7 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PopularController;
-use App\Http\Controllers\SportsController;
+use App\Http\Controllers\SportController;
 use App\Http\Controllers\TechnologyController;
 
 // Logout route
@@ -55,7 +55,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('posts', PostController::class);
     Route::resource('technologies', TechnologyController::class);
-    Route::resource('sports', SportsController::class);
+    Route::resource('sports', SportController::class);
     Route::resource('aboutforum', AboutForumController::class);
     Route::resource('populars', PopularController::class);
     Route::resource('privacypolicy', PrivacyPolicyController::class);

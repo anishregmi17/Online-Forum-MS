@@ -259,43 +259,13 @@
                                 <!-- <img src="profile_icons/sports_icon.png" alt="Sports Community Icon" class="community-icon"> -->
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <span class="font-weight-bold community-name p-2">r/health <i
-                                        class="fa-solid fa-hospital"></i></span>
-
-                                <!-- <img src="profile_icons/health_icon.png" alt="Health Community Icon" class="community-icon"> -->
-                            </a>
-                        </li>
-                        <!-- Add more communities -->
-                        <li>
-                            <a href="#">
-                                <span class="font-weight-bold community-name p-2">r/travel <i
-                                        class="fa-solid fa-plane"></i></span>
-                                <!-- <img src="profile_icons/travel_icon.png" alt="Travel Community Icon" class="community-icon"> -->
-                            </a>
-                        </li>
-                        <li></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- pagination starts here -->
-    <div>
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="sports.html">2</a></li>
-            <li class="page-item"><a class="page-link" href="health.html">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </div>
+
 
     <!-- footer part for online forum -->
     <footer

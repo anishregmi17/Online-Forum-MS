@@ -30,6 +30,24 @@
           </li>
 
           <li class="nav-item">
+              <a class="nav-link" data-bs-target="#populars" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Populars</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="populars" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                  <li>
+                      <a href="{{ route('admin.populars.create') }}">
+                          <i class="bi bi-circle"></i><span>Add Popular</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.populars.index') }}">
+                          <i class="bi bi-circle"></i><span>Manage Popular</span>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="nav-item">
               <a class="nav-link" data-bs-target="#categories" data-bs-toggle="collapse" href="#">
                   <i class="bi bi-journal-text"></i><span>Categories</span><i class="bi bi-chevron-down ms-auto"></i>
               </a>
@@ -66,6 +84,26 @@
               </ul>
           </li>
 
+          {{--
+          <li class="nav-item">
+              <a class="nav-link" data-bs-target="#healths-hero" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Healths</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="healths-hero" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                  <li>
+                      <a href="{{ route('admin.healths.create') }}">
+                          <i class="bi bi-circle"></i><span>Add Health</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.healths.index') }}" class="active">
+                          <i class="bi bi-circle"></i><span>Manage Healths</span>
+                      </a>
+                  </li>
+              </ul>
+          </li> --}}
+
+
           <li class="nav-item">
               <a class="nav-link" data-bs-target="#sports-hero" data-bs-toggle="collapse" href="#">
                   <i class="bi bi-journal-text"></i><span>Sports</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -83,6 +121,7 @@
                   </li>
               </ul>
           </li>
+
 
 
 
@@ -104,46 +143,8 @@
               </ul>
           </li>
 
-          <li class="nav-item">
-              <a class="nav-link" data-bs-target="#populars" data-bs-toggle="collapse" href="#">
-                  <i class="bi bi-journal-text"></i><span>Populars</span><i class="bi bi-chevron-down ms-auto"></i>
-              </a>
-              <ul id="populars" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-                  <li>
-                      <a href="{{ route('admin.populars.create') }}">
-                          <i class="bi bi-circle"></i><span>Add Popular</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="{{ route('admin.populars.index') }}">
-                          <i class="bi bi-circle"></i><span>Manage Popular</span>
-                      </a>
-                  </li>
-              </ul>
-          </li>
 
 
-
-          {{--
-
-      <li class="nav-item">
-        <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Profile</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="../users/create.php">
-              <i class="bi bi-circle"></i><span>Add Profile</span>
-            </a>
-          </li>
-          <li>
-            <a href="../users/index.php" class="active">
-              <i class="bi bi-circle"></i><span>Manage Profile</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
- --}}
 
 
           <li class="nav-item">

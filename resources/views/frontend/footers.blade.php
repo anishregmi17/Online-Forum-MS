@@ -8,9 +8,9 @@
         <p>
             {{-- &copy;  --}}
             {{ $footer->title }}|
-            <a href="contentpolicy.html">Content Policy</a> |
-            <a href="privacypolicy.html">Privacy Policy</a> |
-            <a href="useragreement.html">User Agreement</a>
+            <a href="{{ route('contentpolicy') }}">Content Policy</a> |
+            <a href="{{ route('privacypolicy') }}">Privacy Policy</a> |
+            <a href="{{ route('useragreement') }}">User Agreement</a>
         </p>
     </footer>
 @endforeach

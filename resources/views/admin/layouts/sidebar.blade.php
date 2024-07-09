@@ -29,6 +29,23 @@
               </ul>
           </li>
 
+          <li class="nav-item">
+              <a class="nav-link" data-bs-target="#categories" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Categories</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="categories" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                  <li>
+                      <a href="{{ route('admin.categories.create') }}">
+                          <i class="bi bi-circle"></i><span>Add Categories</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.categories.index') }}" class="active">
+                          <i class="bi bi-circle"></i><span>Manage Categories</span>
+                      </a>
+                  </li>
+              </ul>
+          </li>
 
 
           <li class="nav-item">
@@ -48,6 +65,25 @@
                   </li>
               </ul>
           </li>
+
+          <li class="nav-item">
+              <a class="nav-link" data-bs-target="#sports-hero" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-journal-text"></i><span>Sports</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="sports-hero" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                  <li>
+                      <a href="{{ route('admin.sports.create') }}">
+                          <i class="bi bi-circle"></i><span>Add Sport</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.sports.index') }}" class="active">
+                          <i class="bi bi-circle"></i><span>Manage Sports</span>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+
 
 
           <li class="nav-item">
@@ -89,29 +125,6 @@
 
 
           {{--
-
-      <li class="nav-item">
-        <a class="nav-link " data-bs-target="#testimonials" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Home</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="testimonials" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="../testimonials/create.php">
-              <i class="bi bi-circle"></i><span>Add Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="../testimonials/index.php" class="active">
-              <i class="bi bi-circle"></i><span>Manage Home</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-
-
-
-
-
 
       <li class="nav-item">
         <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -171,7 +184,8 @@
           </li>
 
           <li class="nav-item">
-              <a class="nav-link " data-bs-target="#developer_plan_feature" data-bs-toggle="collapse" href="#">
+              <a class="nav-link " data-bs-target="#developer_plan_feature" data-bs-toggle="collapse"
+                  href="#">
                   <i class="bi bi-journal-text"></i><span>Privacy Policy</span><i
                       class="bi bi-chevron-down ms-auto"></i>
               </a>

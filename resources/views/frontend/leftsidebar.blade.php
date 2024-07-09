@@ -20,21 +20,21 @@
 
                 <h3>Categories</h3>
                 <!-- Dashboard Content Goes Here -->
-                @foreach ($categories as $category)
-                    <ul class="inline-item-list">
-                        <li>
-                            <a href="{{ route('technology') }}">{{ $category->title }}-<i
-                                    class="{{ $category->icon }}"></i></a>
-                        </li>
-                    </ul>
-                @endforeach
+                <ul class="inline-item-list">
+                    <li>
+                        <a href="{{ route('technology') }}">Technology Related Post <i
+                                class="fa-solid fa-laptop"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ route('sports') }}">Sports Related Post <i class="fa-solid fa-medal"></i></a>
+                    </li>
+                    <li>
+                        <a href="health.html">Health Related Post <i class="fa-solid fa-hospital"></i></a>
+                    </li>
+                </ul>
                 <br />
 
-                {{-- <li>
-                <a href="sports.html"
-                  >Sports Related Post <i class="fa-solid fa-medal"></i
-                ></a>
-              </li>
+                {{--
               <li>
                 <a href="technology.html"
                   >Technology Related Post <i class="fa-solid fa-laptop"></i

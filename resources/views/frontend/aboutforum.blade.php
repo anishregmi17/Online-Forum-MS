@@ -42,17 +42,17 @@
                 <!-- Dashboard Content Goes Here -->
                 <ul class="inline-item-list">
                     <li>
-                        <a href="{{ route('aboutforum') }}">About Forum <i class="fa-brands fa-forumbee"></i></a>
+                        <a href="{{ url('aboutforum') }}">About Forum <i class="fa-brands fa-forumbee"></i></a>
                     </li>
                     <li>
-                        <a href="{{ route('contentpolicy') }}">Content Policy <i class="fa-solid fa-handcuffs"></i></a>
+                        <a href="{{ url('contentpolicy') }}">Content Policy <i class="fa-solid fa-handcuffs"></i></a>
                     </li>
                     <li>
-                        <a href="{{ route('privacypolicy') }}">Privacy Policy <i
+                        <a href="{{ url('privacypolicy') }}">Privacy Policy <i
                                 class="fa-solid fa-shield-halved"></i></a>
                     </li>
                     <li>
-                        <a href="{{ route('useragreement') }}">User Agreement <i class="fa-solid fa-handshake"></i></a>
+                        <a href="{{ url('useragreement') }}">User Agreement <i class="fa-solid fa-handshake"></i></a>
                     </li>
                 </ul>
             </div>

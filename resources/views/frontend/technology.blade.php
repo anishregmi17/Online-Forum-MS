@@ -154,17 +154,13 @@
                     <!-- Dashboard Content Goes Here -->
                     <ul class="inline-item-list">
                         <li>
-                            <a href="health.html">Health Related Post <i class="fa-regular fa-hospital"></i></a>
+                            <a href="technology.html">Technology Related Post <i class="fa-solid fa-laptop"></i></a>
                         </li>
                         <li>
                             <a href="sports.html">Sports Related Post <i class="fa-solid fa-medal"></i></a>
                         </li>
-                        <li>
-                            <a href="technology.html">Technology Related Post <i class="fa-solid fa-laptop"></i></a>
-                        </li>
-                        <li>
-                            <a href="travel.html">Travel Related Post <i class="fa-solid fa-location-dot"></i></a>
-                        </li>
+
+
                     </ul>
                     <br />
                     <h3>Resources</h3>

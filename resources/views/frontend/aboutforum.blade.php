@@ -9,13 +9,13 @@
                 <!-- Dashboard Content Goes Here -->
                 <ul class="inline-item-list">
                     <li>
-                        <a href="index.html" class="text-decoration-none">
+                        <a href="{{ 'home' }}" class="text-decoration-none">
                             <i class="fa-solid fa-house"></i> Home</a>
                     </li>
                 </ul>
                 <ul class="inline-item-list">
                     <li>
-                        <a href="sports.html" class="text-decoration-none">
+                        <a href="{{ 'popular' }}" class="text-decoration-none">
                             <i class="fa-solid fa-fire mb-3"></i> Popular</a>
                     </li>
                 </ul>
@@ -24,10 +24,11 @@
                 <!-- Dashboard Content Goes Here -->
                 <ul class="inline-item-list">
                     <li>
-                        <a href="technology.html">Technology Related Post <i class="fa-solid fa-laptop"></i></a>
+                        <a href="{{ route('technology') }}"><i class="fa-solid fa-laptop"></i> Technology Related Post
+                        </a>
                     </li>
                     <li>
-                        <a href="sports.html">Sports Related Post <i class="fa-solid fa-medal"></i></a>
+                        <a href="{{ route('sports') }}"><i class="fa-solid fa-medal"> </i>Sports Related Post </a>
                     </li>
                 </ul>
                 <br />
@@ -36,17 +37,17 @@
                 <!-- Dashboard Content Goes Here -->
                 <ul class="inline-item-list">
                     <li>
-                        <a href="{{ url('aboutforum') }}">About Forum <i class="fa-brands fa-forumbee"></i></a>
+                        <a href="{{ route('aboutforum') }}"><i class="fa-brands fa-forumbee"></i> About Forum </a>
                     </li>
                     <li>
-                        <a href="{{ url('contentpolicy') }}">Content Policy <i class="fa-solid fa-handcuffs"></i></a>
+                        <a href="{{ route('contentpolicy') }}"><i class="fa-solid fa-handcuffs"></i> Content Policy </a>
                     </li>
                     <li>
-                        <a href="{{ url('privacypolicy') }}">Privacy Policy <i
-                                class="fa-solid fa-shield-halved"></i></a>
+                        <a href="{{ route('privacypolicy') }}"><i class="fa-solid fa-shield-halved"></i> Privacy Policy
+                        </a>
                     </li>
                     <li>
-                        <a href="{{ url('useragreement') }}">User Agreement <i class="fa-solid fa-handshake"></i></a>
+                        <a href="{{ route('useragreement') }}"><i class="fa-solid fa-handshake"></i> User Agreement </a>
                     </li>
                 </ul>
             </div>

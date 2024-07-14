@@ -58,8 +58,4 @@
 </div>
 </div>
 
-
-
-{{-- @include('frontend.pagination') --}}
-
 @include('frontend.footers')

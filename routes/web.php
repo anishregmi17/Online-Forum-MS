@@ -18,6 +18,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PopularController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\TechnologyController;
+use App\Http\Controllers\SearchController;
 
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
@@ -76,6 +77,8 @@ Route::get('/privacypolicy', [TemplateController::class, 'privacypolicy'])->name
 Route::get('/useragreement', [TemplateController::class, 'useragreement'])->name('useragreement');
 Route::get('/technology', [TemplateController::class, 'technology'])->name('technology');
 Route::get('/sports', [TemplateController::class, 'sports'])->name('sports');
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // Authentication routes
 require __DIR__ . '/auth.php';

@@ -26,37 +26,62 @@ class TemplateController extends Controller
     public function aboutForum()
     {
         $aboutforums = AboutForum::all();
-        return view('frontend.aboutforum', ['aboutforums' => $aboutforums]);
+        $communities = Community::all();
+        $categories = Category::all();
+        $footers = Footer::all();
+        $posts = Post::all();
+        $sports = Sport::all();
+        return view('frontend.aboutforum', compact('aboutforums', 'sports', 'communities', 'categories', 'footers', 'posts'));
     }
 
     public function contentpolicy()
     {
         $contentPolicies = ContentPolicy::all();
+
         return view('frontend.contentpolicy', ['contentpolicies' => $contentPolicies]);
     }
 
     public function privacypolicy()
     {
         $privacypolicies = PrivacyPolicy::all();
-        return view('frontend.privacypolicy', ['privacypolicies' => $privacypolicies]);
+        $communities = Community::all();
+        $categories = Category::all();
+        $footers = Footer::all();
+        $posts = Post::all();
+        $sports = Sport::all();
+        return view('frontend.privacypolicy', compact('privacypolicies', 'sports', 'communities', 'categories', 'footers', 'posts'));
     }
 
     public function useragreement()
     {
         $useragreements = UserAgreement::all();
-        return view('frontend.useragreement', ['useragreements' => $useragreements]);
+        $communities = Community::all();
+        $categories = Category::all();
+        $footers = Footer::all();
+        $posts = Post::all();
+        $sports = Sport::all();
+        return view('frontend.useragreement', compact('useragreements', 'sports', 'communities', 'categories', 'footers', 'posts'));
     }
+
 
     public function technology()
     {
         $technologies = Technology::all();
-        return view('frontend.technology', compact('technologies'));
+        $communities = Community::all();
+        $categories = Category::all();
+        $footers = Footer::all();
+        $posts = Post::all();
+        return view('frontend.technology', compact('technologies', 'communities', 'categories', 'footers', 'posts'));
     }
 
     public function sports()
     {
         $sports = Sport::all();
-        return view('frontend.sports', compact('sports'));
+        $communities = Community::all();
+        $categories = Category::all();
+        $footers = Footer::all();
+        $posts = Post::all();
+        return view('frontend.sports', compact('sports', 'communities', 'categories', 'footers', 'posts'));
     }
 
     public function home()

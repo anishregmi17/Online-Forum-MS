@@ -18,9 +18,6 @@ A home page serves as the main entry point for a website, providing visitors wit
 
 ![Screenshot 2024-06-19 171645](https://github.com/anishregmi17/Online-Forum-MS/assets/103883548/b9df8ef3-1b62-4ef5-a107-14aa61237f36)
 
-5.Admin-Management Page(CRUD Part going on similarly as posts....): <br>
+5.Admin-Management Page <br>
 ![alt text](image-3.png)
 The admin management section of a website or application is a secure area where administrators can oversee and control various aspects of the platform. This typically includes user management, content moderation, and system settings. Admins can add, edit, or remove users, assign roles and permissions, and manage content such as posts, comments, and media. The admin management area is designed to be robust and user-friendly, ensuring that administrators can efficiently maintain and enhance the platform's functionality and security.
-![alt text](image-5.png)
-
-![alt text](image-4.png)

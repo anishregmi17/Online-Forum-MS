@@ -16,7 +16,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #f3e5e5;
+            background-color: #f1e4e4;
             color: #333;
         }
         .header {
@@ -73,7 +73,7 @@
             line-height: 1.6;
         }
         .footer {
-            background-color: #463163;
+            background-color: #918989;
             color: white;
             padding: 10px;
             text-align: center;

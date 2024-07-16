@@ -57,9 +57,9 @@
         <!-- Post (Middle Column) -->
         <div class="col-md-6">
             <div class="content">
-                <div class="container mt-5">
+                <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-md-8 mt-5">
+                        <div class="col-md-8">
                             <h1>Create New Post</h1>
                             @if ($errors->any())
                                 <div class="alert alert-danger">

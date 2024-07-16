@@ -40,7 +40,7 @@ class PostController extends Controller
             'image' => 'uploads/' . $imageName,
         ]);
 
-        return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
+        return redirect()->route('home')->with('success', 'Post created successfully.');
     }
 
     public function show(string $id)

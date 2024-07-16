@@ -19,6 +19,7 @@ use App\Http\Controllers\PopularController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\TechnologyController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\FrpostController;
 
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
@@ -79,6 +80,8 @@ Route::get('/technology', [TemplateController::class, 'technology'])->name('tech
 Route::get('/sports', [TemplateController::class, 'sports'])->name('sports');
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/posts/create', [App\Http\Controllers\FrpostController::class, 'create'])->name('posts.create');
 
 // Authentication routes
 require __DIR__ . '/auth.php';

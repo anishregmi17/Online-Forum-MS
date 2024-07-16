@@ -40,7 +40,7 @@ class TechnologyController extends Controller
             'image' => 'uploads/' . $imageName,
         ]);
 
-        return redirect()->route('admin.technologies.index')->with('success', 'Technology created successfully.');
+        return redirect()->route('home')->with('success', 'Technology created successfully.');
     }
 
     public function show(string $id)

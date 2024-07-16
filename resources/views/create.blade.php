@@ -56,50 +56,64 @@
 
         <!-- Post (Middle Column) -->
         <div class="col-md-6">
-            <div class="content">
+            <div class="content"
+                style="margin-top: 2rem; padding: 5px; background-color: #fff; border: 1px solid #000; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
-                            <h1>Create New Post</h1>
+                            <h1
+                                style="font-size: 24px; color: #333; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 10px;">
+                                Create New Post</h1>
                             @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
+                                <div class="alert alert-danger"
+                                    style="background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; padding: 8px; border-radius: 4px;">
+                                    <ul style="list-style: none; padding: 0;">
                                         @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
+                                            <li style="margin-bottom: 3px;">{{ $error }}</li>
                                         @endforeach
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ route('admin.posts.store') }}" method="POST"
-                                enctype="multipart/form-data">
+                            <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data"
+                                style="margin-top: 15px;">
                                 @csrf
-                                <div class="form-group">
-                                    <label for="profileimage">Profile Image</label>
-                                    <input type="file" name="profileimage" class="form-control" required>
+                                <div class="form-group" style="margin-bottom: 8px;">
+                                    <label for="profileimage" style="font-weight: bold;">Profile Image</label>
+                                    <input type="file" name="profileimage" class="form-control"
+                                        style="border: 1px solid #000; border-radius: 4px; padding: 4px;" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" name="username" class="form-control" required>
+                                <div class="form-group" style="margin-bottom: 8px;">
+                                    <label for="username" style="font-weight: bold;">Username</label>
+                                    <input type="text" name="username" class="form-control"
+                                        style="border: 1px solid #000; border-radius: 4px; padding: 4px;" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="title">Title</label>
-                                    <input type="text" name="title" class="form-control" required>
+                                <div class="form-group" style="margin-bottom: 8px;">
+                                    <label for="title" style="font-weight: bold;">Title</label>
+                                    <input type="text" name="title" class="form-control"
+                                        style="border: 1px solid #000; border-radius: 4px; padding: 4px;" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea name="description" class="form-control" required></textarea>
+                                <div class="form-group" style="margin-bottom: 8px;">
+                                    <label for="description" style="font-weight: bold;">Description</label>
+                                    <textarea name="description" class="form-control" style="border: 1px solid #000; border-radius: 4px; padding: 4px;"
+                                        rows="5" required></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="image">Image</label>
-                                    <input type="file" name="image" class="form-control" required>
+                                <div class="form-group" style="margin-bottom: 8px;">
+                                    <label for="image" style="font-weight: bold;">Image</label>
+                                    <input type="file" name="image" class="form-control"
+                                        style="border: 1px solid #000; border-radius: 4px; padding: 4px;" required>
                                 </div>
-                                <button type="submit" class="btn btn-success">Create Post</button>
+                                <button type="submit" class="btn btn-success"
+                                    style="background-color: #28a745; border: none; padding: 4px 5px; border-radius: 4px; font-size: 16px;">Create
+                                    Post</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
 
 
 

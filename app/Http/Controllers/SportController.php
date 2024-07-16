@@ -40,7 +40,7 @@ class SportController extends Controller
             'image' => 'uploads/' . $imageName,
         ]);
 
-        return redirect()->route('admin.sports.index')->with('success', 'Sport created successfully.');
+        return redirect()->route('home')->with('success', 'Sport created successfully.');
     }
 
     public function show(string $id)

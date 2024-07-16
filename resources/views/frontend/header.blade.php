@@ -129,7 +129,7 @@
 
                 <div class="col-md-1">
                     <div style="margin-top: 10px">
-                        <a href="{{ route('posts.create') }}"
+                        <a href="{{ route('create') }}"
                             style="color: black;
                   border: 1px solid rgb(9, 6, 6);
                   background-color: transparent;

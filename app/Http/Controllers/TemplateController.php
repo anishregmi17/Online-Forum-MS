@@ -20,7 +20,13 @@ class TemplateController extends Controller
     public function popular()
     {
         $populars = Popular::all();
-        return view('frontend.popular', ['populars' => $populars]);
+        $aboutforums = AboutForum::all();
+        $communities = Community::all();
+        $categories = Category::all();
+        $footers = Footer::all();
+        $posts = Post::all();
+        $sports = Sport::all();
+        return view('frontend.popular', compact('populars', 'aboutforums', 'sports', 'communities', 'categories', 'footers', 'posts'));
     }
 
     public function aboutForum()

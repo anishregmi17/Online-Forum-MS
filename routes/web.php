@@ -85,5 +85,10 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/create', [App\Http\Controllers\FrpostController::class, 'create'])->name('create');
 Route::get('/sportscreate', [App\Http\Controllers\FrsportController::class, 'sportscreate'])->name('sportscreate');
 
+
+Route::post('/post/{post}/like', [PostController::class, 'like'])->name('post.like');
+
+Route::post('/post/{post}/comment', [PostController::class, 'comment'])->name('post.comment');
+
 // Authentication routes
 require __DIR__ . '/auth.php';

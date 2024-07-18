@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\Post;
+use App\Models\Like;
+use App\Models\Comment;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(10);
+        $posts = Post::with(['likes', 'comments'])->paginate(10);
         return view('admin.posts.index', ['posts' => $posts]);
     }
 
@@ -40,12 +42,12 @@ class PostController extends Controller
             'image' => 'uploads/' . $imageName,
         ]);
 
-        return redirect()->route('home')->with('success', 'Thank you ! Post created successfully.');
+        return redirect()->route('home')->with('success', 'Thank you! Post created successfully.');
     }
 
     public function show(string $id)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::with(['likes', 'comments'])->findOrFail($id);
         return view('admin.posts.show', compact('post'));
     }
 
@@ -92,6 +94,32 @@ class PostController extends Controller
         $this->deleteFile($post->profileimage);
         $post->delete();
         return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
+    }
+
+    public function like(Request $request, Post $post)
+    {
+        $like = $post->likes()->where('user_id', auth()->id())->first();
+        if ($like) {
+            $like->delete();
+            return response()->json(['success' => true, 'liked' => false]);
+        } else {
+            $post->likes()->create([
+                'user_id' => auth()->id()
+            ]);
+            return response()->json(['success' => true, 'liked' => true]);
+        }
+    }
+
+    public function comment(Request $request, Post $post)
+    {
+        $request->validate(['body' => 'required']);
+
+        $post->comments()->create([
+            'user_id' => auth()->id(),
+            'body' => $request->body
+        ]);
+
+        return response()->json(['success' => true]);
     }
 
     private function uploadImage($image, $path)

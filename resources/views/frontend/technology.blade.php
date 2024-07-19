@@ -271,7 +271,7 @@
                                 <!-- Thumbs up icon -->
                                 <a href="#"> <i class="far fa-comment me-3 p-2"></i></a>
                                 <!-- Comment icon -->
-                                <a href="#"> <i class="far fa-share-square me-3 p-2"></i></a>
+                                {{-- <a href="#"> <i class="far fa-share-square me-3 p-2"></i></a> --}}
                                 <!-- Share icon -->
                             </div>
                         </div>

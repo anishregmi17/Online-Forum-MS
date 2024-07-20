@@ -22,11 +22,13 @@
                 <!-- Dashboard Content Goes Here -->
                 <ul class="inline-item-list">
                     <li>
-                        <a href="{{ route('technology') }}"><i class="fa-solid fa-laptop"></i> Technology Related Post
+                        <a href="{{ route('technology') }}" style="text-decoration: none;"><i
+                                class="fa-solid fa-laptop"></i> Technology Related Post
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('sports') }}"><i class="fa-solid fa-medal"> </i>Sports Related Post </a>
+                        <a href="{{ route('sports') }}" style="text-decoration: none;"><i class="fa-solid fa-medal">
+                            </i>Sports Related Post </a>
                     </li>
                 </ul>
                 <br />
@@ -35,18 +37,23 @@
                 <!-- Dashboard Content Goes Here -->
                 <ul class="inline-item-list">
                     <li>
-                        <a href="{{ route('aboutforum') }}"><i class="fa-brands fa-forumbee"></i> About Forum </a>
+                        <a href="{{ route('aboutforum') }}" style="text-decoration: none;"><i
+                                class="fa-brands fa-forumbee"></i> About Forum </a>
                     </li>
                     <li>
-                        <a href="{{ route('contentpolicy') }}"><i class="fa-solid fa-handcuffs"></i> Content Policy </a>
+                        <a href="{{ route('contentpolicy') }}" style="text-decoration: none;"><i
+                                class="fa-solid fa-handcuffs"></i> Content Policy </a>
                     </li>
                     <li>
-                        <a href="{{ route('privacypolicy') }}"><i class="fa-solid fa-shield-halved"></i> Privacy Policy
+                        <a href="{{ route('privacypolicy') }}" style="text-decoration: none;"><i
+                                class="fa-solid fa-shield-halved"></i> Privacy Policy
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('useragreement') }}"><i class="fa-solid fa-handshake"></i> User Agreement </a>
+                        <a href="{{ route('useragreement') }}" style="text-decoration: none;"><i
+                                class="fa-solid fa-handshake"></i> User Agreement </a>
                     </li>
                 </ul>
+
             </div>
         </div>

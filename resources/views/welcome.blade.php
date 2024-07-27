@@ -91,7 +91,7 @@
 
         .feature h3 {
             margin-top: 0;
-            color: #ff2d20;
+            color: #d2534c;
         }
 
         .feature p {
@@ -100,15 +100,14 @@
         }
 
         .footer {
-            background-color: #141010;
-            color: white;
+            color: rgb(9, 1, 1);
             padding: 1px;
             text-align: center;
             margin-top: 2rem;
         }
 
         .footer a {
-            color: #b04a44;
+            color: #e06158;
             text-decoration: none;
         }
 
@@ -176,8 +175,9 @@
             <img src="{{ asset('images/image2.png') }}" alt="Online Forum Logo">
         </div>
         <div class="search-box">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." style="width: 600px; height: 30px; font-size: 16px;">
         </div>
+
         <div class="in">
             <a href="{{ route('login') }}" class="button-link login">Login</a>
             <a href="{{ route('register') }}" class="button-link register">Register</a>

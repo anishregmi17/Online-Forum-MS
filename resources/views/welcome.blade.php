@@ -81,7 +81,7 @@
         }
 
         .feature {
-            background-color: rgb(244, 234, 234);
+            background-color: rgb(247, 238, 238);
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -91,7 +91,7 @@
 
         .feature h3 {
             margin-top: 0;
-            color: #d2534c;
+            color: #0f0303;
         }
 
         .feature p {
@@ -100,6 +100,7 @@
         }
 
         .footer {
+            font-size: 1.1rem;
             color: rgb(9, 1, 1);
             padding: 1px;
             text-align: center;
@@ -107,7 +108,7 @@
         }
 
         .footer a {
-            color: #e06158;
+            color: #d6473d;
             text-decoration: none;
         }
 
@@ -127,7 +128,7 @@
             /* Remove underline from links */
             color: white;
             /* Text color */
-            background-color: #5e75a7;
+            background-color: #5945b2;
             /* Facebook-like blue color */
             border-radius: 5px;
             /* Rounded corners */
@@ -136,7 +137,7 @@
         }
 
         .button-link:hover {
-            background-color: #365899;
+            background-color: #2e188f;
             /* Darker blue on hover */
             transform: scale(1.05);
             /* Slightly enlarge on hover */
@@ -159,7 +160,7 @@
         }
 
         .button-link.login:hover {
-            background-color: #7a46db;
+            background-color: #6632c6;
             /* Darker red on hover */
             transform: scale(1.05);
             /* Slightly enlarge on hover */

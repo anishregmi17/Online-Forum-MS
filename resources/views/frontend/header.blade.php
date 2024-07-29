@@ -24,12 +24,12 @@
                 </div>
                 <div class="col-md-6">
                     <form class="form-inline my-2 my-lg-0 d-flex bg-light"
-                        style="border: none; padding: 10px; border-radius: 20px;">
+                        style="border: none; padding: 7px; border-radius: 18px;">
                         <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Search"
                             aria-label="Search"
-                            style="border: none; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 10px 20px; transition: all 0.3s ease;" />
+                            style="border: none; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 8px 18px; transition: all 0.3s ease;" />
                         <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"
-                            style="border: none; border-radius: 20px; padding: 10px 20px; transition: background-color 0.3s ease;">
+                            style="border: none; border-radius: 20px; padding: 8px 18px; transition: background-color 0.3s ease;">
                             Search
                         </button>
                     </form>

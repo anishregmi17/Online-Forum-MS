@@ -23,19 +23,17 @@
                     </nav-logo>
                 </div>
                 <div class="col-md-6">
-                    <form class="form-inline d-flex bg-light" style="border: none; padding: 2px; border-radius: 10px;">
-                        <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Search Pokhara online forum"
+                    <form class="form-inline my-2 my-lg-0 d-flex bg-light"
+                        style="border: none; padding: 10px; border-radius: 20px;">
+                        <input class="form-control mr-sm-2 flex-grow-1" type="search" placeholder="Search"
                             aria-label="Search"
-                            style="border: 1px solid black; border-radius: 10px; padding: 2px 5px; transition: all 0.3s ease;" />
-                        <button class="btn btn-outline-dark my-sm-0" type="submit"
-                            style="border: 1px solid black; border-radius: 10px; padding: 2px 10px; transition: background-color 0.3s ease;">
+                            style="border: none; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 10px 20px; transition: all 0.3s ease;" />
+                        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"
+                            style="border: none; border-radius: 20px; padding: 10px 20px; transition: background-color 0.3s ease;">
                             Search
                         </button>
                     </form>
                 </div>
-
-
-
 
                 <div class="col-md-0.5 notification-container"
                     style="padding-top: 9px; padding-left: 20px; position: relative;">

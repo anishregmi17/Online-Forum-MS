@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -28,7 +27,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
 
         .header img {
@@ -36,43 +34,29 @@
             /* Adjust the logo height as needed */
         }
 
-        .header .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        .header .nav-links {
+        .in {
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .header .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
 
-        .header .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        .header .search-box {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .header .search-box input {
-            width: 100%;
-            max-width: 400px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+            .in {
+                margin-top: 10px;
+                margin-left: auto;
+            }
         }
 
         .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 40px 20px;
             text-align: center;
         }
@@ -129,66 +113,53 @@
         .button-link {
             display: inline-block;
             padding: 10px 20px;
+            /* Padding inside the button */
             margin: 5px;
+            /* Margin around the button */
             border: none;
+            /* Remove border */
             text-decoration: none;
+            /* Remove underline from links */
             color: white;
+            /* Text color */
+            background-color: #5945b2;
+            /* Facebook-like blue color */
             border-radius: 5px;
+            /* Rounded corners */
             transition: background-color 0.3s, transform 0.3s;
+            /* Smooth transition for hover effect */
         }
 
         .button-link:hover {
+            background-color: #2e188f;
+            /* Darker blue on hover */
             transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            text-decoration: none;
+            /* Ensure no underline */
         }
 
         .button-link.register {
             background-color: #be2510;
+            /* Google-like red color */
         }
 
         .button-link.register:hover {
             background-color: #d8513f;
-        }
-
-        .button-link.login {
-            background-color: #5945b2;
-            /* Original login button color */
+            /* Darker red on hover */
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            text-decoration: none;
+            /* Ensure no underline */
         }
 
         .button-link.login:hover {
             background-color: #6632c6;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .header .search-box {
-                order: 3;
-                width: 100%;
-            }
-
-            .header .nav-links {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-            }
-
-            .header .nav-links a {
-                margin: 10px 0;
-                text-align: center;
-                color: black;
-                /* Change text color for better visibility on white background */
-            }
-
-            .header .menu-icon {
-                display: block;
-            }
-
-            .header .menu-icon.active+.nav-links {
-                display: flex;
-            }
+            /* Darker red on hover */
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            text-decoration: none;
+            /* Ensure no underline */
         }
     </style>
 </head>
@@ -198,11 +169,8 @@
         <div>
             <img src="{{ asset('images/image2.png') }}" alt="Online Forum Logo">
         </div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-        <div class="nav-links">
+
+        <div class="in">
             <a href="{{ route('login') }}" class="button-link login">Login</a>
             <a href="{{ route('register') }}" class="button-link register">Register</a>
         </div>
@@ -211,7 +179,7 @@
     <main class="main">
         <h1>Welcome to Our Community!</h1>
         <h2>Pokhara Online Forum</h2>
-        <p style="text-align: justify;">
+        <p style="text-align: justify; margin: 1rem;">
             Pokhara Online Forum is a vibrant digital community based in Pokhara, Nepal. It serves as a hub for locals
             and tourists to share news, updates, and insights about the city. Members can find information on local
             events, popular tourist destinations, and recommendations for dining and accommodation.
@@ -236,18 +204,9 @@
         </div>
     </main>
     <footer class="footer">
-        <p>&copy; 2024 Pokhara Online Forum. All rights reserved. <a href="#">Privacy Policy</a> | <a
+        <p>&copy; 2024 Pokhara Online Forum. All rights reserved. <a href="">Privacy Policy</a> | <a
                 href="#">Terms of Service</a></p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const menuIcon = document.querySelector('.menu-icon');
-            const navLinks = document.querySelector('.nav-links');
-            menuIcon.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        }
-    </script>
 </body>
 
 </html>

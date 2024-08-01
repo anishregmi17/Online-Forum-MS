@@ -54,9 +54,9 @@
                         </div>
                         <div class="notification-body" style="max-height: 200px; overflow-y: auto; padding: 10px;">
                             <!-- Add your notification messages here -->
-                            <p>You have a new message!</p>
-                            <p>Your order has been shipped!</p>
-                            <p>Reminder: Meeting at 3 PM.</p>
+                            <p>Anish Like your post!</p>
+                            <p>Today's is user birthday!</p>
+                            <p>Hari comment on your post</p>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,6 @@
                     });
                 </script>
 
-
                 <div class="col-md-0.5 message-container"
                     style="padding-top: 9px; padding-left: 20px; position: relative;">
                     <a href="#" id="message-icon" class="message-icon" style="position: relative;">
@@ -102,8 +101,7 @@
                         </div>
                         <div class="message-body" style="max-height: 200px; overflow-y: auto; padding: 10px;">
                             <!-- Add your message list here -->
-                            <p>New message from John Doe</p>
-                            <p>Meeting reminder for tomorrow</p>
+                            <p>Anish message you</p>
                             <p>You have unread messages</p>
                         </div>
                     </div>

@@ -112,12 +112,6 @@
             </div>
         </div>
 
-
-
-
-
-
-
         <!-- popular communities -->
         <div class="col-md-3">
             <div class="content sticky-sidebar">

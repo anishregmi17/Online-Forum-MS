@@ -130,18 +130,20 @@
                     });
                 </script>
 
-
                 <div class="col-md-1">
-                    <div style="margin-top: 10px">
+                    <div style="margin-top: 10px;">
                         <a href="{{ route('create') }}"
                             style="color: black;
-                  border: 1px solid rgb(9, 6, 6);
-                  background-color: transparent;
-                  text-decoration: none;">
-                            <i class="fa-solid fa-plus"><span style="font-size: smaller">Create</span></i>
+                   background-color: transparent;
+                   text-decoration: none;
+                   border-radius: 5px;
+                   display: inline-block;
+                   transition: background-color 0.3s ease;">
+                            <i class="fa-solid fa-plus"><span style="font-size: smaller;">Create</span></i>
                         </a>
                     </div>
                 </div>
+
 
 
                 <div class="col-md-1">

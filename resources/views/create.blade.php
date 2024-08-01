@@ -63,7 +63,7 @@
                         <div class="col-md-8">
                             <h1
                                 style="font-size: 24px; color: #333; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 10px;">
-                                Create New Post</h1>
+                                Create New Posts</h1>
                             @if ($errors->any())
                                 <div class="alert alert-danger"
                                     style="background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; padding: 8px; border-radius: 4px;">

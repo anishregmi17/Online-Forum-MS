@@ -242,7 +242,7 @@
     <!-- Post (Middle Column) -->
     <div class="col-md-6">
         <div class="content">
-            <h2>Technology Feed</h2>
+            <h2>Sports Feed</h2>
             <!-- Post Content Goes Here -->
 
             @foreach ($sports as $sport)

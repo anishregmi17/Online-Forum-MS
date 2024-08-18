@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
         // Call the PopularSeeder
         $this->call(PopularSeeder::class);
         $this->call(TechnologySeeder::class);
+        $this->call(SportSeeder::class);
+        $this->call(AboutForumSeeder::class);
 
     }
 }

@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TechnologySeeder::class);
         $this->call(SportSeeder::class);
         $this->call(AboutForumSeeder::class);
+        $this->call(ContentPolicySeeder::class);
 
     }
 }
